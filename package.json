@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -rf .next out && next build && cp public/_headers out/_headers && cp public/_routes.json out/_routes.json",
     "start": "next start",
     "lint": "eslint .",
-    "clean": "next clean"
+    "clean": "rm -rf .next out"
   },
   "dependencies": {
     "@google/genai": "^1.17.0",
