@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Contacto() {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24 lg:pt-28 pb-20">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 mb-16">
         <div className="relative overflow-hidden rounded-xl bg-primary-container p-12 md:p-20 flex flex-col md:flex-row items-center gap-12">

@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[921px] flex items-center pt-20 overflow-hidden bg-primary">
+      <section className="relative min-h-[921px] flex items-center pt-24 lg:pt-28 overflow-hidden bg-primary">
         {heroSlides.map((slide, index) => (
           <div 
             key={index} 

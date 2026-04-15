@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Casos() {
   return (
-    <div className="pt-16">
+    <div className="pt-24 lg:pt-28">
       {/* Hero Section */}
       <section className="relative min-h-[716px] flex items-center overflow-hidden bg-primary-container">
         <div className="absolute inset-0 z-0">
