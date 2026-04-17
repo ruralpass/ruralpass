@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import navbarLogo from "../logo-ruralpass-final.png";
+import navbarLogo from "../logo-navbar-final.png";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -25,6 +25,8 @@ export default function Navbar() {
             alt="RuralPass Logo"
             className="w-auto h-20 lg:h-24 transition-transform duration-300 group-hover:scale-105"
             priority
+            quality={100}
+            sizes="(max-width: 1024px) 160px, 192px"
             onError={(e) => {
               e.currentTarget.src = "/images/logo-navbar-large-fallback.jpg";
             }}
