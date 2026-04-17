@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import navbarLogo from "../logo-ruralpass-navbar.png";
+import navbarLogo from "../logo-ruralpass-final.png";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -53,18 +53,18 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          {/* Desktop WhatsApp Button */}
+          {/* Desktop Phone Link */}
           <Link
-            href="https://wa.me/yourlink"
+            href="tel:+56956277070"
             className="hidden md:flex bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 items-center gap-2"
           >
-            <span className="material-symbols-outlined text-sm">chat</span>
-            WhatsApp
+            <span className="material-symbols-outlined text-sm">call</span>
+            +56 9 5627 7070
           </Link>
 
-          {/* Mobile WhatsApp Button (Circle) */}
+          {/* Mobile Phone Button (Circle) */}
           <Link
-            href="https://wa.me/yourlink"
+            href="tel:+56956277070"
             className="md:hidden w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary/90 transition-all active:scale-95 shadow-md"
           >
             <span className="material-symbols-outlined text-lg">call</span>

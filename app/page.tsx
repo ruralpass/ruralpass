@@ -2,28 +2,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import ServicesSlider from '@/components/ServicesSlider';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroSlides = [
     {
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBKyPs0-lfNCrWXMGsLVRD4qUXSSEK8S2CxsuOB0Emc9EFHu8iGzbDEEElnvny3QLeSm0D1CPxgoxWW7qrbCzPceocWctH6TDv3OOvuqi9QuYglDB8vn9ICUYx0Jxa3QllEW0OasooX5vzMJZ3_Uor2ywO2kJs_XNDPOGkAbpqNavjQaHz55n2H1iiAh8H4MTf3xN4WhYqlKL0mWX9-G5rm7Qu5TcYEworAm5sY7df-z7Nuqf_GLrjP0msHbERU3tF8PhlQ2Z4yvXW0",
-      tag: "Resiliencia Crítica",
-      title: "Si tu sistema Off-Grid falla, no venimos mañana — <span class='text-secondary-container'>venimos hoy.</span>",
-      description: "Garantizamos la continuidad operativa y resiliencia de tu hogar o empresa rural con ingeniería de respuesta rápida."
+      image: "/images/slide-1-ruralpass.png",
+      tag: "Energía Solar",
+      title: "Energía <span class='text-secondary-container'>Solar</span>",
+      description: "Energía solar off grid eficiente y confiable para una verdadera independencia energética."
     },
     {
-      image: "https://picsum.photos/seed/solarpanel2/1920/1080",
-      tag: "Energía Ininterrumpida",
-      title: "Independencia energética total para tu <span class='text-secondary-container'>proyecto rural.</span>",
-      description: "Diseñamos e instalamos sistemas fotovoltaicos robustos que soportan las condiciones más extremas."
+      image: "/images/slide-2-ruralpass.png",
+      tag: "Seguridad",
+      title: "Sistemas de <span class='text-secondary-container'>Seguridad</span>",
+      description: "Sistemas de seguridad inteligentes que protegen tu entorno con tecnología y precisión."
     },
     {
-      image: "https://picsum.photos/seed/securitycamera/1920/1080",
-      tag: "Seguridad Perimetral",
-      title: "Vigilancia autónoma donde la red eléctrica <span class='text-secondary-container'>no llega.</span>",
-      description: "Sistemas de cámaras con alimentación solar y conectividad satelital para proteger lo que más importa."
+      image: "/images/slide-3-ruralpass.png",
+      tag: "Telecomunicaciones",
+      title: "<span class='text-secondary-container'>Telecomunicaciones</span>",
+      description: "Conectividad estable y de alto rendimiento para mantenerte siempre comunicado."
     }
   ];
 
@@ -69,7 +70,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 pt-4">
               <Link href="#" className="bg-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition-all flex items-center gap-2 shadow-lg">
                 <span className="material-symbols-outlined">call</span>
-                WhatsApp Urgencias
+                WhatsApp
               </Link>
               <Link href="#contacto" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white/20 transition-all">
                 Solicitar Cotización
@@ -88,33 +89,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="hidden lg:block relative">
-            <div className="bg-surface-container-highest/10 backdrop-blur-xl border border-white/10 p-8 rounded-xl shadow-2xl">
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-xs font-bold tracking-widest text-secondary-container uppercase">Estado del Sistema</span>
-                <span className="flex h-3 w-3 bg-tertiary-fixed rounded-full animate-pulse"></span>
-              </div>
-              <div className="space-y-4">
-                <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full w-[94%] bg-tertiary-fixed"></div>
-                </div>
-                <div className="flex justify-between text-white text-sm">
-                  <span className="font-medium">Continuidad Operativa</span>
-                  <span className="font-black">94.8%</span>
-                </div>
-                <div className="grid grid-cols-2 gap-4 pt-4">
-                  <div className="bg-primary/40 p-4 rounded-lg">
-                    <span className="text-primary-fixed-dim text-[10px] block mb-1">RESPUESTA PROMEDIO</span>
-                    <span className="text-xl font-bold text-white">4.2 Hrs</span>
-                  </div>
-                  <div className="bg-primary/40 p-4 rounded-lg">
-                    <span className="text-primary-fixed-dim text-[10px] block mb-1">TECNICOS ACTIVOS</span>
-                    <span className="text-xl font-bold text-white">12</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -122,8 +96,8 @@ export default function Home() {
       <div className="bg-surface-container-low border-b border-outline-variant/10">
         <div className="max-w-7xl mx-auto px-6 py-8 flex flex-wrap justify-between items-center gap-8">
           <div className="flex items-center gap-4 group">
-            <div className="p-3 bg-primary/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
-              <span className="material-symbols-outlined text-3xl">verified</span>
+            <div className="w-14 h-14 bg-primary/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 flex items-center justify-center">
+              <span className="material-symbols-outlined text-2xl">verified</span>
             </div>
             <div>
               <p className="text-sm font-bold text-primary">Certificación SEC</p>
@@ -131,8 +105,8 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-center gap-4 group">
-            <div className="p-3 bg-primary/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
-              <span className="material-symbols-outlined text-3xl">timer</span>
+            <div className="w-14 h-14 bg-primary/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 flex items-center justify-center">
+              <span className="material-symbols-outlined text-2xl">timer</span>
             </div>
             <div>
               <p className="text-sm font-bold text-primary">Respuesta &lt; 24h</p>
@@ -140,8 +114,8 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-center gap-4 group">
-            <div className="p-3 bg-primary/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0">
-              <span className="material-symbols-outlined text-3xl">shield_with_heart</span>
+            <div className="w-14 h-14 bg-primary/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 flex items-center justify-center">
+              <span className="material-symbols-outlined text-2xl">shield_with_heart</span>
             </div>
             <div>
               <p className="text-sm font-bold text-primary">Diagnóstico Transparente</p>
@@ -154,66 +128,11 @@ export default function Home() {
       {/* Services Section */}
       <section className="py-24 bg-surface" id="servicios">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
+          <div className="mb-12">
             <h2 className="text-label-md font-bold tracking-widest text-secondary uppercase mb-2">Nuestras Soluciones</h2>
             <h3 className="text-4xl font-extrabold text-primary tracking-tight">Ingeniería para el Terreno</h3>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Large Card: Solar */}
-            <div className="lg:col-span-2 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm group">
-              <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-                <div className="relative h-64 md:h-full overflow-hidden">
-                  <Image 
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmgWq-2G-__jtiIlNKT6JUmpIZlenABJlOSEKNGf9j0CR_A1n_6RPel3-LekkrcMmCvMTGqBIqD9wfqxTF3o6BDCGu8g4awLVLChCaW5MBv5d0FT8qDdcZgtnbwfL0_fmLsW-3IyoVDatLYI6AD3jVQcdRwAVYmEjzJaCxa3JPRhsm8ZDk9IUGmaDeAu8TE-iRw4MYRB21dc8aHm8tKD1Rl3y-a6TYQmrPJRxLYLtkf0zzRk3LBtOT372h4Hb8K033oc5fCX0YObqQ"
-                    alt="Technical close-up of a battery bank and hybrid inverter installation"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="p-10 flex flex-col justify-center">
-                  <span className="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-black tracking-widest uppercase rounded mb-4 w-max">Servicio Estrella</span>
-                  <h4 className="text-3xl font-bold text-primary mb-4">Paneles Solares Off-Grid</h4>
-                  <p className="text-on-surface-variant mb-6 leading-relaxed">Sistemas aislados diseñados para la máxima autonomía. Cubrimos desde la instalación hasta el mantenimiento preventivo y reparación crítica.</p>
-                  <ul className="space-y-3 mb-8">
-                    <li className="flex items-center gap-3 text-sm font-medium">
-                      <span className="material-symbols-outlined text-tertiary">check_circle</span>
-                      Monitoreo Remoto Satelital
-                    </li>
-                    <li className="flex items-center gap-3 text-sm font-medium">
-                      <span className="material-symbols-outlined text-tertiary">check_circle</span>
-                      Reparación de Inversores Híbridos
-                    </li>
-                    <li className="flex items-center gap-3 text-sm font-medium">
-                      <span className="material-symbols-outlined text-tertiary">check_circle</span>
-                      Optimización de Banco de Baterías
-                    </li>
-                  </ul>
-                  <Link href="#" className="text-primary font-bold inline-flex items-center gap-2 group/link w-max">
-                    Ver Especificaciones Técnicas
-                    <span className="material-symbols-outlined transition-transform group-hover/link:translate-x-1">arrow_forward</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {/* Secondary Card: Security */}
-            <div className="bg-primary text-white p-10 rounded-xl flex flex-col justify-between relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <span className="material-symbols-outlined text-8xl">nest_cam_outdoor</span>
-              </div>
-              <div className="relative z-10">
-                <h4 className="text-2xl font-bold mb-4">Cámaras de Seguridad Solar</h4>
-                <p className="text-primary-fixed-dim leading-relaxed mb-6">Vigilancia 24/7 sin cables. Sistemas de cámaras autónomas con enlace LTE/Satelital para zonas sin red eléctrica.</p>
-              </div>
-              <div className="space-y-4 relative z-10">
-                <div className="bg-white/10 p-4 rounded-lg border border-white/5">
-                  <span className="text-[10px] font-bold tracking-widest uppercase block mb-1">Ideal para:</span>
-                  <p className="text-sm">Campos, Galpones y Parcelas de agrado.</p>
-                </div>
-                <Link href="#" className="w-full bg-secondary text-white py-3 rounded text-center font-bold text-sm block hover:opacity-90 transition-all">Consultar Disponibilidad</Link>
-              </div>
-            </div>
-          </div>
+          <ServicesSlider />
         </div>
       </section>
 
@@ -268,22 +187,22 @@ export default function Home() {
             <div>
               <h2 className="text-4xl font-extrabold text-primary mb-6">Garantía de Diagnóstico Transparente</h2>
               <p className="text-lg text-on-surface-variant leading-relaxed">
-                Entendemos los desafíos de la ruralidad. Por eso, nuestro diagnóstico incluye un reporte técnico detallado y un presupuesto cerrado antes de cualquier intervención.
+                Trabajamos con criterios técnicos y enfoque profesional, respaldando cada proyecto con garantías reales en instalación y equipos — porque tu tranquilidad no puede esperar.
               </p>
             </div>
             <div className="space-y-6">
               <div className="flex gap-4 p-6 bg-tertiary/5 rounded-xl border border-tertiary/10">
                 <span className="material-symbols-outlined text-3xl text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>workspace_premium</span>
                 <div>
-                  <p className="font-bold text-primary">Badge de Calidad RuralPass</p>
-                  <p className="text-sm text-on-surface-variant">Cada reparación cuenta con 1 año de garantía extendida en mano de obra.</p>
+                  <p className="font-bold text-primary">Calidad RuralPass</p>
+                  <p className="text-sm text-on-surface-variant">Respaldamos cada proyecto con 1 año de garantía en instalación y hasta 3 años de garantía en equipos solares, asegurando calidad, durabilidad y tranquilidad.</p>
                 </div>
               </div>
               <div className="flex gap-4 p-6 bg-secondary/5 rounded-xl border border-secondary/10">
                 <span className="material-symbols-outlined text-3xl text-secondary">fact_check</span>
                 <div>
-                  <p className="font-bold text-primary">Protocolos SEC</p>
-                  <p className="text-sm text-on-surface-variant">Nuestros técnicos ejecutan pruebas de aislamiento y tierra certificadas.</p>
+                  <p className="font-bold text-primary">Diagnósticos Profesionales</p>
+                  <p className="text-sm text-on-surface-variant">Cada diagnóstico es realizado con criterios técnicos y enfoque profesional, asegurando resultados confiables y decisiones acertadas.</p>
                 </div>
               </div>
             </div>
@@ -531,7 +450,13 @@ export default function Home() {
                   <span className="w-12 h-12 shrink-0 rounded-lg bg-white/10 flex items-center justify-center text-secondary-container">
                     <span className="material-symbols-outlined">location_on</span>
                   </span>
-                  <p className="font-medium">Servicio disponible en Regiones O&apos;Higgins, Maule y Ñuble.</p>
+                  <p className="font-medium">Servicio disponible desde la Región de Valparaíso hasta la Región de Los Lagos.</p>
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="w-12 h-12 shrink-0 rounded-lg bg-white/10 flex items-center justify-center text-secondary-container">
+                    <span className="material-symbols-outlined">handyman</span>
+                  </span>
+                  <p className="font-medium">Especialistas en soluciones energéticas para la zona centro y sur de Chile.</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="w-12 h-12 shrink-0 rounded-lg bg-white/10 flex items-center justify-center text-secondary-container">

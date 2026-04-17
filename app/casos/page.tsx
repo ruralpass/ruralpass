@@ -85,8 +85,8 @@ export default function Casos() {
             <div className="bg-white rounded-xl overflow-hidden flex flex-col group transition-all hover:shadow-lg">
               <div className="h-64 overflow-hidden relative">
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn5tKtm0mWUomXiHFvIuypuCsPjP1MqEjqTO-TkPvcv4Y0LLhuZ090rlOIQ6zrd6TJBK9g6Krjjszyj39ZUa81fjZDMMcOiV2XG8Xrk9svspNZ3AkaAEO-K-RCoivpKjQU2hqTd3Wx3K_-KqhTF_4OPCKzhsxZ-v1yi-eAtlHBM0vQWm9KTNlMI8OkaiWORLHj9VQ2rZba5pO_zZzm94u68kbEe2PvQM6EXwu5p2fJdkMJF-RT9-U2wrB03Ldp2EfgqLRiJTBYFdpT"
-                  alt="Colbún Project"
+                  src="/images/colbun.png"
+                  alt="Instalación paneles solares off-grid Colbún"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -109,9 +109,6 @@ export default function Casos() {
                 <p className="text-sm text-on-surface-variant leading-relaxed mb-6">
                   El cliente sufría cortes frecuentes; instalamos un sistema híbrido de 5kW que garantiza autonomía total durante fallas de red.
                 </p>
-                <button className="text-secondary font-bold text-sm flex items-center gap-2 group/btn">
-                  Ver Detalles <span className="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-                </button>
               </div>
             </div>
 
@@ -119,8 +116,8 @@ export default function Casos() {
             <div className="bg-white rounded-xl overflow-hidden flex flex-col group transition-all hover:shadow-lg">
               <div className="h-64 overflow-hidden relative">
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOr8nCO5YnMTP7jtsVWRkzF8icjSzgvqRP2RthlUCBHNrYulEOKybxFoHfhl2YM2JyTchy91ORoPT9RiajubuDevYFZTq-Zrrhu1xU4dnxsQHtHgrugo0QupfTooHO5QYMdyABmBZ3i_GLeztseh2lv5gDiduv5_ED-n6VLFggB-q1gL0xkkDIA7daulk1bgM8WgJW2yrSN6FbIiFzNWKQK6oz3pK9R_wEMMkIaV0oV4elXaOxa0B2jMTp0lV-3zDmlAOKHrABEfVi"
-                  alt="Panguipulli Security"
+                  src="/images/panguipulli.png"
+                  alt="Sistema vigilancia perimetral Panguipulli"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -143,9 +140,6 @@ export default function Casos() {
                 <p className="text-sm text-on-surface-variant leading-relaxed mb-6">
                   Predio remoto sin conectividad. Implementamos enlace Starlink y cámaras 4K térmicas con alimentación solar independiente.
                 </p>
-                <button className="text-secondary font-bold text-sm flex items-center gap-2 group/btn">
-                  Ver Detalles <span className="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-                </button>
               </div>
             </div>
 
@@ -153,8 +147,8 @@ export default function Casos() {
             <div className="bg-white rounded-xl overflow-hidden flex flex-col group transition-all hover:shadow-lg">
               <div className="h-64 overflow-hidden relative">
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiJTMJU3d7aRa0e-77J-1ttFHYbFeyCP1j6PKx_gmyuE5SuEMeUuUFkrGAZyeN-ybikahZyv9Monbxt4GBEyjm6Kki2hEw4NvOLT63xDVXvrmXj_rVAky4Y3DQMkZ7UA9DSjf7p2VkLM_bnhHYWTpYrMMrKk56xvyJf4-Ak2WDoF9Ra9fZKWaT-RH7W_WytML53ebE71AxiyJSc3evnQJOH3SskuKXVJYaRSDZC8R6tshe0IuNPabJXssMzTKYdfYWCToVADcFM4J7"
-                  alt="Pirque Maintenance"
+                  src="/images/fotovoltaica.png"
+                  alt="Mantención optimización fotovoltaica Pirque"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -177,9 +171,6 @@ export default function Casos() {
                 <p className="text-sm text-on-surface-variant leading-relaxed mb-6">
                   Sistema industrial con baja eficiencia por falta de limpieza y fallas en inversores. Recuperamos el 100% de la capacidad nominal.
                 </p>
-                <button className="text-secondary font-bold text-sm flex items-center gap-2 group/btn">
-                  Ver Detalles <span className="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-                </button>
               </div>
             </div>
           </div>

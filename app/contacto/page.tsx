@@ -3,40 +3,67 @@ import Link from 'next/link';
 
 export default function Contacto() {
   return (
-    <div className="pt-24 lg:pt-28 pb-20">
+    <div className="pt-24 lg:pt-28">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 mb-16">
-        <div className="relative overflow-hidden rounded-xl bg-primary-container p-12 md:p-20 flex flex-col md:flex-row items-center gap-12">
-          <div className="relative z-10 w-full md:w-3/5">
-            <span className="inline-block px-3 py-1 rounded-full bg-secondary-container/20 text-secondary-fixed font-bold text-xs tracking-widest uppercase mb-6">Canales Directos</span>
-            <h1 className="text-white text-5xl md:text-6xl font-black tracking-tighter leading-none mb-6">Contacto RuralPass</h1>
-            <p className="text-on-primary-container text-lg md:text-xl max-w-xl leading-relaxed">Soporte técnico experto y cercanía garantizada. Estamos en el terreno cuando la tecnología no puede esperar.</p>
-          </div>
-          <div className="w-full md:w-2/5 flex flex-col gap-4 relative z-10">
-            <Link href="https://wa.me/yourwhatsapp" className="group relative flex items-center justify-between bg-secondary-container text-on-secondary-container p-6 rounded-xl hover:brightness-110 transition-all shadow-lg">
-              <div className="flex items-center gap-4">
-                <div className="bg-white/20 p-3 rounded-lg">
-                  <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>emergency_home</span>
+      <section className="relative min-h-[716px] flex items-center overflow-hidden bg-primary">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvie0gSGNJ7zy2hTu-2CpoSRQWUeMwAtXXJdAPmZKMiH4YqX_-68Gf39TqxiMyl5SYndFTLOJct2Far0FhxjoQo3OoENmcMLcNL4rCk4woXTBB792BTBYDQG4efs1-r-eaWemlMgO2Uj5ASfp7PD8i5ZQDgndYEicEC7F-WmxVPQpFJtb7rLjpaEew0qo8CpFR-AMny7_66DKjlJFp6oc96aIl_6kozL7dzJ5-rhFI6s5Rhq-yG3N2KqQjhA4wHdbnq83n2sbrI-QCy"
+            alt="Técnico RuralPass en terreno"
+            fill
+            className="object-cover opacity-40"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 py-24 relative z-10 w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-block px-3 py-1 bg-secondary text-white text-xs font-bold tracking-widest uppercase rounded-sm mb-6">Canales Directos</div>
+              <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-none mb-6">
+                Contacto RuralPass
+              </h1>
+              <p className="text-lg text-surface-variant/90 max-w-xl leading-relaxed mb-8">
+                Soporte técnico experto y cercanía garantizada. Estamos en el terreno cuando la tecnología no puede esperar.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2 text-white font-bold">
+                  <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                  <span>Atención 24/7</span>
                 </div>
-                <div>
-                  <p className="text-sm font-bold uppercase tracking-widest opacity-80">Atención 24/7</p>
-                  <h3 className="text-2xl font-black">WhatsApp Urgencias</h3>
+                <div className="flex items-center gap-2 text-white font-bold">
+                  <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                  <span>Técnicos en Terreno</span>
                 </div>
               </div>
-              <span className="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
-            </Link>
-            <div className="bg-white/5 border border-white/10 p-4 rounded-lg flex items-center gap-3">
-              <span className="flex h-3 w-3 rounded-full bg-green-400 animate-pulse"></span>
-              <p className="text-white text-sm font-medium">Técnicos activos en Maule y O&apos;Higgins</p>
+            </div>
+            <div className="relative">
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-secondary-container opacity-20 rounded-full blur-3xl"></div>
+              <div className="relative z-10 flex flex-col gap-4">
+                <Link href="https://wa.me/yourwhatsapp" className="group flex items-center justify-between bg-secondary-container/20 border border-white/20 backdrop-blur-sm text-white p-6 rounded-xl hover:bg-secondary-container/30 transition-all shadow-lg">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-white/20 p-3 rounded-lg">
+                      <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>emergency_home</span>
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold uppercase tracking-widest opacity-80">Atención 24/7</p>
+                      <h3 className="text-2xl font-black">WhatsApp Urgencias</h3>
+                    </div>
+                  </div>
+                  <span className="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </Link>
+                <div className="bg-white/5 border border-white/10 p-4 rounded-lg flex items-center gap-3">
+                  <span className="flex h-3 w-3 rounded-full bg-green-400 animate-pulse"></span>
+                  <p className="text-white text-sm font-medium">Técnicos activos en Maule y O&apos;Higgins</p>
+                </div>
+              </div>
             </div>
           </div>
-          {/* Decorative element */}
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary opacity-20 blur-[120px] rounded-full"></div>
         </div>
       </section>
 
       {/* Main Content: Form & Info Grid */}
-      <section className="max-w-7xl mx-auto px-6">
+      <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Contact Form (Bento Style) */}
           <div className="lg:col-span-7 bg-surface-container-low p-8 md:p-12 rounded-xl border-l-4 border-secondary">
@@ -61,8 +88,10 @@ export default function Contacto() {
                 <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Tipo de Sistema</label>
                 <select className="bg-surface-container-lowest border-outline-variant/20 rounded-lg p-4 focus:ring-2 focus:ring-primary-fixed-dim outline-none transition-all">
                   <option>Solar</option>
-                  <option>Cámaras</option>
-                  <option>Ambos</option>
+                  <option>Seguridad</option>
+                  <option>Control de Acceso</option>
+                  <option>Cercos Eléctricos</option>
+                  <option>Telecomunicaciones</option>
                   <option>Otro</option>
                 </select>
               </div>
@@ -94,11 +123,14 @@ export default function Contacto() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex items-end p-6">
                   <div>
                     <h3 className="text-white text-xl font-bold">Zonas de Cobertura</h3>
-                    <p className="text-on-primary-container text-sm">Respuesta inmediata en terreno.</p>
+                    <p className="text-on-primary-container text-sm">Desde la V Región hasta Chiloé.</p>
                   </div>
                 </div>
               </div>
               <div className="p-6 grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-2 text-primary font-bold">
+                  <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span> Valparaíso
+                </div>
                 <div className="flex items-center gap-2 text-primary font-bold">
                   <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span> O&apos;Higgins
                 </div>
@@ -111,6 +143,9 @@ export default function Contacto() {
                 <div className="flex items-center gap-2 text-primary font-bold">
                   <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span> Biobío
                 </div>
+                <div className="flex items-center gap-2 text-primary font-bold">
+                  <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span> Los Lagos
+                </div>
               </div>
             </div>
 
@@ -120,14 +155,22 @@ export default function Contacto() {
                 <span className="material-symbols-outlined text-primary p-2 bg-white rounded-lg shadow-sm">mail</span>
                 <div>
                   <h4 className="text-xs font-bold uppercase text-primary/60 tracking-widest">Email Corporativo</h4>
-                  <p className="text-primary font-bold text-lg">soporte@ruralpass.cl</p>
+                  <p className="text-primary font-bold text-lg">ruralpass.spa@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <span className="material-symbols-outlined text-primary p-2 bg-white rounded-lg shadow-sm">apartment</span>
                 <div>
                   <h4 className="text-xs font-bold uppercase text-primary/60 tracking-widest">Oficina Central</h4>
-                  <p className="text-primary font-bold text-lg">Av. San Miguel 2400, Talca</p>
+                  <p className="text-primary font-bold">Colo Colo 379, Oficina 706</p>
+                  <p className="text-primary font-bold">Edificio Amanecer, Concepción</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="material-symbols-outlined text-primary p-2 bg-white rounded-lg shadow-sm">warehouse</span>
+                <div>
+                  <h4 className="text-xs font-bold uppercase text-primary/60 tracking-widest">Bodega y Equipo Técnico</h4>
+                  <p className="text-primary font-bold">Nuevo York Dos 824, Los Ángeles</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
