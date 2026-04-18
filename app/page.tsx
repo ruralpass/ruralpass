@@ -218,15 +218,46 @@ export default function Home() {
             <h2 className="text-label-md font-bold tracking-widest text-secondary uppercase mb-2">Opiniones Reales</h2>
             <h3 className="text-4xl font-extrabold text-primary tracking-tight">Confianza en el Terreno</h3>
           </div>
-          <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-8 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 pb-4 md:pb-0 hide-scrollbar">
-            {/* Testimonial 1 */}
-            <div className="min-w-[85vw] md:min-w-0 snap-center bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 relative shrink-0">
-              <div className="flex text-secondary-container mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                ))}
+          {/* Carrusel móvil */}
+          <div className="md:hidden overflow-x-auto snap-x snap-mandatory flex gap-4 pb-4 hide-scrollbar">
+            {[
+              { quote: <>Lo que más valoro es la <strong>respuesta inmediata</strong>. En el campo, quedarte sin luz es un problema crítico, y RuralPass llegó el mismo día. Me devolvieron la tranquilidad.</>, name: 'Carlos Henríquez', city: 'Curicó' },
+              { quote: <>Excelente servicio técnico para mi parcela. El diagnóstico fue transparente y profesional. Ahora vivo con total <strong>paz mental</strong> sabiendo que el sistema off-grid es resiliente.</>, name: 'Marta Villalobos', city: 'Rancagua' },
+              { quote: <>Buscaba una solución para las cámaras solares en mi fundo y la respuesta fue <strong>increíblemente rápida</strong>. Ingeniería de verdad aplicada al terreno rural. Muy recomendados.</>, name: 'Pedro Alarcón', city: 'Talca' },
+            ].map((t, i) => (
+              <div key={i} className="snap-center shrink-0 w-[80vw] bg-white rounded-xl shadow-sm border border-outline-variant/10 p-6 flex flex-col justify-between">
+                <div>
+                  <div className="flex text-secondary-container mb-4">
+                    {[...Array(5)].map((_, j) => (
+                      <span key={j} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                    ))}
+                  </div>
+                  <p className="text-on-surface-variant italic leading-relaxed text-sm">&quot;{t.quote}&quot;</p>
+                </div>
+                <div className="flex items-center gap-3 border-t border-outline-variant/10 pt-5 mt-6">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary overflow-hidden shrink-0">
+                    <span className="material-symbols-outlined text-2xl">account_circle</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-primary text-sm leading-none">{t.name}</p>
+                    <p className="text-xs text-secondary mt-1 uppercase font-bold tracking-wider">{t.city}</p>
+                  </div>
+                </div>
               </div>
-              <p className="text-on-surface-variant italic mb-8 leading-relaxed">&quot;Lo que más valoro es la <strong>respuesta inmediata</strong>. En el campo, quedarte sin luz es un problema crítico, y RuralPass llegó el mismo día. Me devolvieron la tranquilidad.&quot;</p>
+            ))}
+          </div>
+          {/* Grid desktop */}
+          <div className="hidden md:grid md:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col justify-between">
+              <div>
+                <div className="flex text-secondary-container mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                  ))}
+                </div>
+                <p className="text-on-surface-variant italic mb-8 leading-relaxed">&quot;Lo que más valoro es la <strong>respuesta inmediata</strong>. En el campo, quedarte sin luz es un problema crítico, y RuralPass llegó el mismo día. Me devolvieron la tranquilidad.&quot;</p>
+              </div>
               <div className="flex items-center gap-4 border-t border-outline-variant/10 pt-6">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary overflow-hidden">
                   <span className="material-symbols-outlined text-3xl">account_circle</span>
@@ -238,13 +269,15 @@ export default function Home() {
               </div>
             </div>
             {/* Testimonial 2 */}
-            <div className="min-w-[85vw] md:min-w-0 snap-center bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 relative shrink-0">
-              <div className="flex text-secondary-container mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                ))}
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col justify-between">
+              <div>
+                <div className="flex text-secondary-container mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                  ))}
+                </div>
+                <p className="text-on-surface-variant italic mb-8 leading-relaxed">&quot;Excelente servicio técnico para mi parcela. El diagnóstico fue transparente y profesional. Ahora vivo con total <strong>paz mental</strong> sabiendo que el sistema off-grid es resiliente.&quot;</p>
               </div>
-              <p className="text-on-surface-variant italic mb-8 leading-relaxed">&quot;Excelente servicio técnico para mi parcela. El diagnóstico fue transparente y profesional. Ahora vivo con total <strong>paz mental</strong> sabiendo que el sistema off-grid es resiliente.&quot;</p>
               <div className="flex items-center gap-4 border-t border-outline-variant/10 pt-6">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary overflow-hidden">
                   <span className="material-symbols-outlined text-3xl">account_circle</span>
@@ -256,13 +289,15 @@ export default function Home() {
               </div>
             </div>
             {/* Testimonial 3 */}
-            <div className="min-w-[85vw] md:min-w-0 snap-center bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 relative shrink-0">
-              <div className="flex text-secondary-container mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                ))}
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 flex flex-col justify-between">
+              <div>
+                <div className="flex text-secondary-container mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                  ))}
+                </div>
+                <p className="text-on-surface-variant italic mb-8 leading-relaxed">&quot;Buscaba una solución para las cámaras solares en mi fundo y la respuesta fue <strong>increíblemente rápida</strong>. Ingeniería de verdad aplicada al terreno rural. Muy recomendados.&quot;</p>
               </div>
-              <p className="text-on-surface-variant italic mb-8 leading-relaxed">&quot;Buscaba una solución para las cámaras solares en mi fundo y la respuesta fue <strong>increíblemente rápida</strong>. Ingeniería de verdad aplicada al terreno rural. Muy recomendados.&quot;</p>
               <div className="flex items-center gap-4 border-t border-outline-variant/10 pt-6">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary overflow-hidden">
                   <span className="material-symbols-outlined text-3xl">account_circle</span>
