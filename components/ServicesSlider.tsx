@@ -48,8 +48,7 @@ const services = [
       "Tecnología adaptable a cada entorno, con instalación y soporte especializado.",
       "Control y protección mediante sistemas confiables y de alta precisión.",
     ],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBJ5SuRAlJRpptqNjNeP1_K9kZQrL-GqUzHpmPGMgkJtZPpJyY_Z1GhdLWgvkJBDOCSq-6zgADZ-Nf-NSfO9xFoGydpHp0W8oz8qQfiAwOzPzG_S2bp0wfkYrp0TBXeebrhutlV3ha3SjgEjRULhCrgx_08llKQqlJSVl0Edt3h9Vqxo11a0pXO0UJ4Zb6Q629veoi-YPiI2dkYm9EbsuE5YYcKBhzzuCccBKUMZSIg-0KVPfo0quQ7QIWb6z6EgIQ8Ullzr_jSHsFO",
+    image: "/images/control-de-acceso.png",
     imageAlt: "Control de acceso instalado en zona rural",
   },
   {

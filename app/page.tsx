@@ -167,14 +167,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="aspect-square bg-surface-container-high rounded-full absolute -top-10 -left-10 w-64 h-64 blur-3xl opacity-50"></div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white h-[400px]">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ5SuRAlJRpptqNjNeP1_K9kZQrL-GqUzHpmPGMgkJtZPpJyY_Z1GhdLWgvkJBDOCSq-6zgADZ-Nf-NSfO9xFoGydpHp0W8oz8qQfiAwOzPzG_S2bp0wfkYrp0TBXeebrhutlV3ha3SjgEjRULhCrgx_08llKQqlJSVl0Edt3h9Vqxo11a0pXO0UJ4Zb6Q629veoi-YPiI2dkYm9EbsuE5YYcKBhzzuCccBKUMZSIg-0KVPfo0quQ7QIWb6z6EgIQ8Ullzr_jSHsFO"
-                alt="Stylized map focus of rural central Chile regions"
-                fill
-                className="object-cover grayscale brightness-90 contrast-125"
-                referrerPolicy="no-referrer"
+                src="/images/cobertura-nacional.png"
+                alt="Cobertura Nacional RuralPass"
+                width={800}
+                height={600}
+                className="w-full h-auto block"
               />
+              <div className="absolute inset-0 bg-black/15"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="bg-primary/90 text-white p-6 rounded-xl backdrop-blur-md border border-white/20 text-center">
                   <span className="material-symbols-outlined text-4xl mb-2" style={{ fontVariationSettings: "'FILL' 1" }}>pin_drop</span>
