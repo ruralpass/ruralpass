@@ -21,19 +21,22 @@ export default function Contacto() {
             <div>
               <div className="inline-block px-3 py-1 bg-secondary text-white text-xs font-bold tracking-widest uppercase rounded-sm mb-6">Canales Directos</div>
               <h1 className="text-5xl md:text-6xl font-black text-white tracking-tight leading-none mb-6">
-                Contacto RuralPass
+                Hablemos de tu Proyecto
               </h1>
-              <p className="text-lg text-surface-variant/90 max-w-xl leading-relaxed mb-8">
-                Soporte técnico experto y cercanía garantizada. Estamos en el terreno cuando la tecnología no puede esperar.
+              <p className="text-lg text-surface-variant/90 max-w-xl leading-relaxed mb-4">
+                Si necesitas mejorar tu sistema solar, conectividad o seguridad, estamos disponibles para orientarte con soluciones claras y adaptadas a tu realidad.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <p className="text-lg text-surface-variant/90 max-w-xl leading-relaxed mb-8">
+                Trabajamos en terreno y también de forma remota para entregarte una evaluación técnica confiable desde el primer contacto.
+              </p>
+              <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-2 text-white font-bold">
                   <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                  <span>Atención 24/7</span>
+                  <span>Asesoría técnica real</span>
                 </div>
                 <div className="flex items-center gap-2 text-white font-bold">
                   <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                  <span>Técnicos en Terreno</span>
+                  <span>Atención directa y sin intermediarios</span>
                 </div>
               </div>
             </div>
@@ -54,7 +57,7 @@ export default function Contacto() {
                 </Link>
                 <div className="bg-white/5 border border-white/10 p-4 rounded-lg flex items-center gap-3">
                   <span className="flex h-3 w-3 rounded-full bg-green-400 animate-pulse"></span>
-                  <p className="text-white text-sm font-medium">Técnicos activos en Maule y O&apos;Higgins</p>
+                  <p className="text-white text-sm font-medium">Técnicos activos en el Biobío y alrededores</p>
                 </div>
               </div>
             </div>

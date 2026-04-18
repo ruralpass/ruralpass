@@ -242,24 +242,25 @@ export default function Servicios() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="bg-primary rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
             <div className="lg:w-1/2 p-12 lg:p-20 text-white flex flex-col justify-center">
-              <h2 className="text-4xl font-extrabold mb-6 tracking-tight">¿Listo para asegurar su resiliencia energética?</h2>
-              <p className="text-primary-fixed-dim text-lg leading-relaxed mb-10">Hable directamente con un ingeniero especialista. Realizamos una evaluación remota preliminar sin costo para su proyecto.</p>
+              <h2 className="text-4xl font-extrabold mb-6 tracking-tight">Soluciones reales en conectividad y energía para entornos exigentes</h2>
+              <p className="text-primary-fixed-dim text-lg leading-relaxed mb-10">Implementamos sistemas de energía solar, conectividad y seguridad adaptados a zonas rurales y condiciones complejas, asegurando operación continua y soluciones confiables en cada proyecto.</p>
+              <p className="text-primary-fixed-dim text-lg leading-relaxed mb-10">Evaluamos cada caso de forma técnica para entregar soluciones eficientes, sostenibles y ajustadas a las necesidades reales de nuestros clientes.</p>
               <div className="flex flex-wrap gap-4">
                 <Link href="#" className="bg-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition-all flex items-center gap-3 shadow-lg">
                   <span className="material-symbols-outlined">call</span>
-                  WhatsApp Urgencias
+                  WhatsApp Técnico
                 </Link>
                 <Link href="/contacto" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-white/20 transition-all">
-                  Solicitar Cotización
+                  Solicitar Evaluación
                 </Link>
               </div>
             </div>
             <div className="lg:w-1/2 relative min-h-[300px]">
               <Image 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-QsEEMGzc8YbzyDXn2498TLDynfd6whZwSw_Pee_R8t5wK4o9mfTmotJ10NAiITtd6OfeN0r90Eb06nN8i_ymd5vwHGJJNsJWr-7aGExfZTxkDhCMTwOvgGAxfjkwTLrCZEQZ1CR1SDahSlEaxOaXoLvbxaoPm-TO6NJs_j0QaWNntNn4BZTZxIi4e-_bzDjuWGIXy4JSjS3GJJB06gWQdY8ixApSNs1LSGkBen_nr5BiTAyyX2_ApOk_nVUJ_0fz7P1iIieKQVrX"
-                alt="misty mountain range in southern chile"
+                src="/images/banner-tarjeta-servicios.png"
+                alt="Técnico instalando soluciones de conectividad y energía en terreno"
                 fill
-                className="object-cover grayscale brightness-90 contrast-125"
+                className="object-cover brightness-90 contrast-110"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-secondary/20"></div>

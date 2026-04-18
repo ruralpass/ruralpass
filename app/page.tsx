@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import ServicesSlider from '@/components/ServicesSlider';
+import TeamStackingCards from '@/components/TeamStackingCards';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -371,168 +372,22 @@ export default function Home() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-surface-container-low overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-surface-container-low overflow-hidden">
 
-          {/* Header */}
-          <div className="mb-16">
+        {/* Header + placeholder image */}
+        <div className="max-w-7xl mx-auto px-6 pt-24 pb-16">
+          <div className="mb-12">
             <p className="text-label-md font-bold tracking-widest text-secondary uppercase mb-2">Las personas detrás del trabajo</p>
             <h2 className="text-4xl font-extrabold text-primary tracking-tight">Nuestro Equipo</h2>
           </div>
-
-          {/* Team Cards */}
-          <div className="space-y-6 mb-20">
-
-            {/* Francisco Espinoza */}
-            <div className="group bg-white rounded-2xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col sm:flex-row">
-              <div className="relative w-full sm:w-48 h-56 sm:h-auto shrink-0">
-                <Image
-                  src="/images/testimonio1.png"
-                  alt="Francisco Espinoza"
-                  fill
-                  className="object-cover object-top"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent sm:bg-gradient-to-r sm:from-transparent sm:to-transparent"></div>
-              </div>
-              <div className="flex-1 p-8 flex flex-col justify-center">
-                <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full uppercase tracking-wider">Fundador</span>
-                  <span className="px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full uppercase tracking-wider">Operaciones</span>
-                </div>
-                <h3 className="text-2xl font-extrabold text-primary mb-1">Francisco Espinoza</h3>
-                <p className="text-secondary font-bold text-sm uppercase tracking-widest mb-4">Gerente General y Encargado de Operaciones</p>
-                <p className="text-on-surface-variant text-sm leading-relaxed max-w-xl">Lidera cada proyecto con visión técnica y compromiso de terreno. Más de 8 años coordinando instalaciones de sistemas solares y eléctricos en zonas rurales de Chile central y sur.</p>
-                <div className="flex flex-wrap gap-6 mt-6 pt-6 border-t border-outline-variant/10">
-                  <div>
-                    <p className="text-2xl font-extrabold text-primary">+120</p>
-                    <p className="text-xs text-on-surface-variant font-medium">Proyectos liderados</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-extrabold text-primary">8</p>
-                    <p className="text-xs text-on-surface-variant font-medium">Años de experiencia</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-extrabold text-primary">6</p>
-                    <p className="text-xs text-on-surface-variant font-medium">Regiones cubiertas</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Gonzalo Valenzuela */}
-            <div className="group bg-white rounded-2xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col sm:flex-row">
-              <div className="relative w-full sm:w-48 h-56 sm:h-auto shrink-0">
-                <Image
-                  src="/images/testimonio2.png"
-                  alt="Gonzalo Valenzuela"
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
-              <div className="flex-1 p-8 flex flex-col justify-center">
-                <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full uppercase tracking-wider">Montaje</span>
-                  <span className="px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full uppercase tracking-wider">Fotovoltaico</span>
-                  <span className="px-3 py-1 bg-tertiary/10 text-tertiary text-xs font-bold rounded-full uppercase tracking-wider">Obras Civiles</span>
-                </div>
-                <h3 className="text-2xl font-extrabold text-primary mb-1">Gonzalo Valenzuela</h3>
-                <p className="text-secondary font-bold text-sm uppercase tracking-widest mb-4">Especialista en Montaje y Obras Civiles</p>
-                <p className="text-on-surface-variant text-sm leading-relaxed max-w-xl">Técnico especialista en sistemas fotovoltaicos con dominio completo en instalación de estructuras, cableado de potencia y ejecución de obras civiles para proyectos energéticos rurales.</p>
-                <div className="flex flex-wrap gap-6 mt-6 pt-6 border-t border-outline-variant/10">
-                  <div>
-                    <p className="text-2xl font-extrabold text-primary">+80</p>
-                    <p className="text-xs text-on-surface-variant font-medium">Instalaciones</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl font-extrabold text-primary">500+</p>
-                    <p className="text-xs text-on-surface-variant font-medium">Paneles montados</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Maria Francisca Menares */}
-            <div className="group bg-white rounded-2xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col sm:flex-row">
-              <div className="relative w-full sm:w-48 h-56 sm:h-auto shrink-0">
-                <Image
-                  src="/images/testimonio3.png"
-                  alt="Maria Francisca Menares"
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
-              <div className="flex-1 p-8 flex flex-col justify-center">
-                <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full uppercase tracking-wider">RRHH</span>
-                  <span className="px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full uppercase tracking-wider">Comunicaciones</span>
-                </div>
-                <h3 className="text-2xl font-extrabold text-primary mb-1">Maria Francisca Menares</h3>
-                <p className="text-secondary font-bold text-sm uppercase tracking-widest mb-4">Jefa de Recursos Humanos y Comunicaciones</p>
-                <p className="text-on-surface-variant text-sm leading-relaxed max-w-xl">Responsable de la gestión del talento humano y la comunicación institucional de RuralPass. Asegura que cada cliente reciba una atención oportuna y que el equipo opere con los más altos estándares de profesionalismo.</p>
-              </div>
-            </div>
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden">
+            <Image src="/images/banner-nuestro-equipo.png" alt="Nuestro Equipo RuralPass" fill className="object-cover object-center" />
           </div>
-
-          {/* Fleet & Infrastructure Block */}
-          <div className="bg-primary rounded-2xl p-8 md:p-12 text-white">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-              <div>
-                <p className="text-secondary-container text-xs font-bold tracking-widest uppercase mb-3">Infraestructura de Terreno</p>
-                <h3 className="text-3xl font-extrabold tracking-tight mb-4">Equipados para llegar donde otros no llegan</h3>
-                <p className="text-primary-fixed-dim leading-relaxed mb-8">Contamos con camionetas 4x4 equipadas con herramientas especializadas, materiales eléctricos y equipos de prueba para operar en zonas remotas sin depender de logística externa.</p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/10 rounded-xl p-4 flex items-start gap-3">
-                    <span className="material-symbols-outlined text-2xl text-secondary-container mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>local_shipping</span>
-                    <div>
-                      <p className="font-bold text-sm">Flota 4x4</p>
-                      <p className="text-xs text-primary-fixed-dim mt-0.5">Camionetas equipadas para terrenos rurales</p>
-                    </div>
-                  </div>
-                  <div className="bg-white/10 rounded-xl p-4 flex items-start gap-3">
-                    <span className="material-symbols-outlined text-2xl text-secondary-container mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>solar_power</span>
-                    <div>
-                      <p className="font-bold text-sm">Sistemas Solares</p>
-                      <p className="text-xs text-primary-fixed-dim mt-0.5">Implementados en fundos y parcelas</p>
-                    </div>
-                  </div>
-                  <div className="bg-white/10 rounded-xl p-4 flex items-start gap-3">
-                    <span className="material-symbols-outlined text-2xl text-secondary-container mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>construction</span>
-                    <div>
-                      <p className="font-bold text-sm">Herramientas SEC</p>
-                      <p className="text-xs text-primary-fixed-dim mt-0.5">Instrumentación eléctrica certificada</p>
-                    </div>
-                  </div>
-                  <div className="bg-white/10 rounded-xl p-4 flex items-start gap-3">
-                    <span className="material-symbols-outlined text-2xl text-secondary-container mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>satellite_alt</span>
-                    <div>
-                      <p className="font-bold text-sm">Conectividad</p>
-                      <p className="text-xs text-primary-fixed-dim mt-0.5">Coordinación remota vía Starlink</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/10 rounded-2xl p-6 text-center">
-                  <p className="text-5xl font-black text-secondary-container">+120</p>
-                  <p className="text-sm text-primary-fixed-dim mt-2 font-medium">Proyectos completados</p>
-                </div>
-                <div className="bg-white/10 rounded-2xl p-6 text-center">
-                  <p className="text-5xl font-black text-secondary-container">6</p>
-                  <p className="text-sm text-primary-fixed-dim mt-2 font-medium">Regiones de cobertura</p>
-                </div>
-                <div className="bg-white/10 rounded-2xl p-6 text-center">
-                  <p className="text-5xl font-black text-secondary-container">500+</p>
-                  <p className="text-sm text-primary-fixed-dim mt-2 font-medium">Paneles instalados</p>
-                </div>
-                <div className="bg-white/10 rounded-2xl p-6 text-center">
-                  <p className="text-5xl font-black text-secondary-container">24h</p>
-                  <p className="text-sm text-primary-fixed-dim mt-2 font-medium">Tiempo de respuesta</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        {/* Stacking Cards con GSAP */}
+        <TeamStackingCards />
+
       </section>
 
       {/* Contact Section */}
