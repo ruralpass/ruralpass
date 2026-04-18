@@ -73,12 +73,11 @@ export default function TeamStackingCards() {
     <div className="max-w-4xl mx-auto px-6 pb-16 sm:pb-32">
 
       {/* Carrusel móvil */}
-      <div className="sm:hidden flex overflow-x-auto snap-x snap-mandatory gap-6 -mx-6 px-6 pb-4 hide-scrollbar">
+      <div className="sm:hidden overflow-x-auto snap-x snap-mandatory flex gap-4 pb-4 hide-scrollbar">
         {team.map((m) => (
           <div
             key={m.name}
-            className="min-w-[85vw] snap-center bg-white rounded-2xl border border-outline-variant/10 overflow-hidden flex flex-col shrink-0"
-            style={{ boxShadow: "0 6px 32px rgba(0,0,0,0.09)" }}
+            className="snap-center shrink-0 w-[80vw] bg-white rounded-2xl border border-outline-variant/10 overflow-hidden flex flex-col"
           >
             <div className="relative w-full h-52 shrink-0">
               <Image src={m.image} alt={m.name} fill className="object-cover object-top" />
