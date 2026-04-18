@@ -61,7 +61,7 @@ export default function Home() {
               {heroSlides[currentSlide].tag}
             </div>
             <h1 
-              className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.1]"
+              className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.1]"
               dangerouslySetInnerHTML={{ __html: heroSlides[currentSlide].title }}
             />
             <p className="text-lg md:text-xl text-primary-fixed-dim max-w-xl leading-relaxed">
@@ -374,65 +374,48 @@ export default function Home() {
       <section className="py-24 bg-surface-container-low">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-primary mb-4">Técnicos Certificados</h2>
-            <p className="text-on-surface-variant max-w-xl mx-auto">No enviamos aprendices. Todos nuestros especialistas cuentan con certificaciones vigentes y años de experiencia en sistemas aislados.</p>
+            <h2 className="text-4xl font-extrabold text-primary mb-4">Nuestro Equipo</h2>
+            <p className="text-on-surface-variant max-w-xl mx-auto">Profesionales comprometidos con la calidad, la innovación y el servicio en cada proyecto.</p>
           </div>
-          <div className="flex overflow-x-auto md:grid md:grid-cols-4 gap-8 snap-x snap-mandatory pb-8 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
-            <div className="min-w-[70vw] md:min-w-0 snap-center text-center group">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center group">
               <div className="relative w-48 h-48 mx-auto mb-6">
                 <div className="absolute inset-0 bg-primary rounded-full rotate-3 group-hover:rotate-6 transition-transform"></div>
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCqs3R34BnyG6ig5qVnXenmqy37fYyjPrqn9GjYuTFe-4SweBhA3BVWU6f8m_XbWxPWmdYwPDvWNBBH5rguIJ0WMbB75nW7RJGIMnmIivQ2orajKcp5aXmjWNzq5JHHKMNEIPt9yTFB0HIcvfutLzwdVzbwVCVoJvWBIGJO0dkJUDkpxEY_NdOy6OMhGDPNBMrubw715rHe-nAecaqf5pwVhD8_gKO4uLMAXTSZotoFRi_SckqxUCrNl9hhcfMSq8AZzXrdseXizTK"
-                  alt="Portrait of a professional technician"
+                  src="/images/testimonio1.png"
+                  alt="Francisco Espinoza"
                   fill
-                  className="object-cover rounded-full border-4 border-white shadow-xl grayscale hover:grayscale-0 transition-all"
-                  referrerPolicy="no-referrer"
+                  className="object-cover rounded-full border-4 border-white shadow-xl transition-all"
                 />
               </div>
-              <h5 className="text-xl font-bold text-primary">Rodrigo M.</h5>
-              <p className="text-sm text-secondary font-bold uppercase tracking-widest mt-1">Ing. Jefe de Terreno</p>
+              <h5 className="text-xl font-bold text-primary">Francisco Espinoza</h5>
+              <p className="text-sm text-secondary font-bold uppercase tracking-widest mt-1">Gerente General y Encargado de Operaciones</p>
             </div>
-            <div className="min-w-[70vw] md:min-w-0 snap-center text-center group">
+            <div className="text-center group">
               <div className="relative w-48 h-48 mx-auto mb-6">
                 <div className="absolute inset-0 bg-primary rounded-full -rotate-3 group-hover:-rotate-6 transition-transform"></div>
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFaGNssB-Zw-E2LiqKU-HFCziywPNZRPf4evbX90p1NzcR7mwn5i35HCoN31_xP-9ivsqkfwoNNkaQg9ce_KBpsjZkFs4uzUDZgVyXv8mGviyRT0IhKp9pjw38p-vdzpZBXKcJHaCTVHJwF-HEPHHGTUDqqBOPky5gLGoql45Z1o3cWa1-73OI3WDf58L_6I3aVj7OdONlBsjgCh0Ejftk0IWCrEM0Vu74QV_uyMelkH3vcVfBhSQfwQQqNxSdQbG1bJxpPloT5G2P"
-                  alt="Portrait of a professional technical specialist"
+                  src="/images/testimonio2.png"
+                  alt="Gonzalo Valenzuela"
                   fill
-                  className="object-cover rounded-full border-4 border-white shadow-xl grayscale hover:grayscale-0 transition-all"
-                  referrerPolicy="no-referrer"
+                  className="object-cover rounded-full border-4 border-white shadow-xl transition-all"
                 />
               </div>
-              <h5 className="text-xl font-bold text-primary">Claudia S.</h5>
-              <p className="text-sm text-secondary font-bold uppercase tracking-widest mt-1">Espec. Fotovoltaica</p>
+              <h5 className="text-xl font-bold text-primary">Gonzalo Valenzuela</h5>
+              <p className="text-sm text-secondary font-bold uppercase tracking-widest mt-1">Especialista en Montaje y Obras Civiles — Técnico en Sistemas Fotovoltaicos</p>
             </div>
-            <div className="min-w-[70vw] md:min-w-0 snap-center text-center group">
+            <div className="text-center group">
               <div className="relative w-48 h-48 mx-auto mb-6">
                 <div className="absolute inset-0 bg-primary rounded-full rotate-3 group-hover:rotate-6 transition-transform"></div>
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9FuIvQgNFvj9VfEjp3-foG9k-8Rg41mUi3DPbKfI8f1xsfc2LoQ6SYWNufXwD6Bcumn7HZ6gAs5n22VSOIWbCwfI70vxTZf5r2JFhtY6i2bvg7xS6seKCM1CqlZz4lKUmzAaciyYamkqKGUfwNKWUP3tfqx8ST-rDWb75UcoPb6-gYaEJyL6B4gPkG1dB0Rv2J9fVJbHVAJy27clD-IlyJvajUNDlUaSvAMiwFuAeW_TZFf3u9JFKDxYa16215D5QYbMVIoZaFPlN"
-                  alt="Portrait of an experienced technical field engineer"
+                  src="/images/testimonio3.png"
+                  alt="Maria Francisca Menares"
                   fill
-                  className="object-cover rounded-full border-4 border-white shadow-xl grayscale hover:grayscale-0 transition-all"
-                  referrerPolicy="no-referrer"
+                  className="object-cover rounded-full border-4 border-white shadow-xl transition-all"
                 />
               </div>
-              <h5 className="text-xl font-bold text-primary">Jorge L.</h5>
-              <p className="text-sm text-secondary font-bold uppercase tracking-widest mt-1">Técnico SEC Clase A</p>
-            </div>
-            <div className="min-w-[70vw] md:min-w-0 snap-center text-center group">
-              <div className="relative w-48 h-48 mx-auto mb-6">
-                <div className="absolute inset-0 bg-primary rounded-full -rotate-3 group-hover:-rotate-6 transition-transform"></div>
-                <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQIf0KBGATnzhJ-_3sdQICA6GCekHhtMnaK8u_BGq62WTe54JmwvpVEaMHX9OCD_t9n5Vv6XS4CdVTLp7SARIfLmXVWZ48p3KS4TX_yPi5NXzW6fsvEIp9ZkIfNv_EqP7Gb80D4SmAjcfuXXcTO8V5UDXjbBZWXVDJgn0Cx7ICa7aedXuE3GUikadROuWkbPgGOef3lcQccv3AJz5vuiv5lbfYUgpJJoM1Eb99pwrp6stThttxMDQgKUxRYFj0yGWcRsNjrsmHFJF9"
-                  alt="Portrait of a young male professional technician"
-                  fill
-                  className="object-cover rounded-full border-4 border-white shadow-xl grayscale hover:grayscale-0 transition-all"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <h5 className="text-xl font-bold text-primary">Matías V.</h5>
-              <p className="text-sm text-secondary font-bold uppercase tracking-widest mt-1">Espec. Baterías Litio</p>
+              <h5 className="text-xl font-bold text-primary">Maria Francisca Menares</h5>
+              <p className="text-sm text-secondary font-bold uppercase tracking-widest mt-1">Jefa de Recursos Humanos y Comunicaciones</p>
             </div>
           </div>
         </div>
