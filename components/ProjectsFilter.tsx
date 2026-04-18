@@ -69,14 +69,14 @@ export default function ProjectsFilter() {
       {/* Filter Bar */}
       <section className="bg-surface-container-low py-8">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-between gap-6">
-            <div className="text-sm font-bold text-primary-container tracking-tighter uppercase">Filtrar Proyectos</div>
-            <div className="flex flex-wrap gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="text-sm font-bold text-primary-container tracking-tighter uppercase shrink-0">Filtrar Proyectos</div>
+            <div className="flex overflow-x-auto sm:flex-wrap gap-2 hide-scrollbar pb-1 sm:pb-0">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActive(cat)}
-                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
+                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-all shrink-0 ${
                     active === cat
                       ? 'bg-primary text-white'
                       : 'bg-white text-primary border border-outline-variant/20 hover:bg-surface-container'

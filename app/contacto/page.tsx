@@ -190,7 +190,7 @@ export default function Contacto() {
       </section>
 
       {/* Trust Badges Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-24 py-16 bg-primary rounded-xl overflow-hidden relative">
+      <section className="max-w-7xl mx-auto px-6 mt-24 mb-24 py-16 bg-primary rounded-xl overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
           <Image 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5hVvs7FQfiqgswxmET1EXga5wv8B7v6fXqPlWaNIiZV-35Z5gSgjT0Qk880-9xOnK0XW-KmaQsEg-xSZ-iaYObRfZ4rhkGZKjXWh76AAZvww0D0AOkQUwVHjFDAgDGfexBl3C6RwN84MJzFI0m1rsikGxIBDMmLbZh1h8xq_Eo3F1gp7kePxCEUJSSglDvmg61NmkeBi53RwUDMNeOo3rLon_5foDwBL8AJnwoZXZTAMIn0pYm7KTWf2XS4UHd3J7WmVqGCQChWpc"

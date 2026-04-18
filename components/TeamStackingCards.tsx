@@ -70,38 +70,33 @@ export default function TeamStackingCards() {
   const prev = () => goTo((active - 1 + team.length) % team.length);
 
   return (
-    <div className="max-w-4xl mx-auto px-6 pb-32">
+    <div className="max-w-4xl mx-auto px-6 pb-16 sm:pb-32">
 
-      {/* Stack */}
-      <div className="relative" style={{ height: 340 + (team.length - 1) * STACK_Y }}>
-        {team.map((m, i) => (
+      {/* Carrusel móvil */}
+      <div className="sm:hidden flex overflow-x-auto snap-x snap-mandatory gap-6 -mx-6 px-6 pb-4 hide-scrollbar">
+        {team.map((m) => (
           <div
             key={m.name}
-            ref={(el) => { cardsRef.current[i] = el; }}
-            onClick={() => goTo(i)}
-            className="absolute inset-x-0 top-0 bg-white rounded-2xl border border-outline-variant/10 overflow-hidden flex flex-col sm:flex-row will-change-transform origin-top cursor-pointer"
-            style={{ boxShadow: "0 6px 32px rgba(0,0,0,0.09)", minHeight: 280 }}
+            className="min-w-[85vw] snap-center bg-white rounded-2xl border border-outline-variant/10 overflow-hidden flex flex-col shrink-0"
+            style={{ boxShadow: "0 6px 32px rgba(0,0,0,0.09)" }}
           >
-            {/* Foto */}
-            <div className="relative w-full sm:w-52 h-52 sm:h-auto shrink-0">
+            <div className="relative w-full h-52 shrink-0">
               <Image src={m.image} alt={m.name} fill className="object-cover object-top" />
             </div>
-
-            {/* Info */}
-            <div className="flex-1 p-7 flex flex-col justify-center gap-2">
+            <div className="flex-1 p-6 flex flex-col gap-2">
               <div className="flex flex-wrap gap-2">
                 {m.badges.map(b => (
                   <span key={b.label} className={`px-3 py-1 ${b.color} text-xs font-bold rounded-full uppercase tracking-wider`}>{b.label}</span>
                 ))}
               </div>
-              <h3 className="text-2xl font-extrabold text-primary">{m.name}</h3>
+              <h3 className="text-xl font-extrabold text-primary">{m.name}</h3>
               <p className="text-secondary font-bold text-xs uppercase tracking-widest">{m.role}</p>
               <p className="text-on-surface-variant text-sm leading-relaxed">{m.description}</p>
               {m.stats.length > 0 && (
-                <div className="flex flex-wrap gap-6 pt-4 mt-2 border-t border-outline-variant/10">
+                <div className="flex flex-wrap gap-4 pt-3 mt-2 border-t border-outline-variant/10">
                   {m.stats.map(s => (
                     <div key={s.label}>
-                      <p className="text-xl font-extrabold text-primary">{s.value}</p>
+                      <p className="text-lg font-extrabold text-primary">{s.value}</p>
                       <p className="text-xs text-on-surface-variant">{s.label}</p>
                     </div>
                   ))}
@@ -112,24 +107,63 @@ export default function TeamStackingCards() {
         ))}
       </div>
 
-      {/* Controles */}
-      <div className="flex items-center justify-between mt-6">
-        <div className="flex gap-3">
-          {team.map((_, i) => (
-            <button key={i} onClick={() => goTo(i)} aria-label={`Ver ${team[i].name}`}>
-              <span className={`block rounded-full transition-all duration-200 ${
-                active === i ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-outline-variant/40 hover:bg-primary/40"
-              }`} />
-            </button>
+      {/* Stacking Cards desktop (sm+) */}
+      <div className="hidden sm:block">
+        <div className="relative" style={{ height: 340 + (team.length - 1) * STACK_Y }}>
+          {team.map((m, i) => (
+            <div
+              key={m.name}
+              ref={(el) => { cardsRef.current[i] = el; }}
+              onClick={() => goTo(i)}
+              className="absolute inset-x-0 top-0 bg-white rounded-2xl border border-outline-variant/10 overflow-hidden flex flex-col sm:flex-row will-change-transform origin-top cursor-pointer"
+              style={{ boxShadow: "0 6px 32px rgba(0,0,0,0.09)", minHeight: 280 }}
+            >
+              <div className="relative w-full sm:w-52 h-52 sm:h-auto shrink-0">
+                <Image src={m.image} alt={m.name} fill className="object-cover object-top" />
+              </div>
+              <div className="flex-1 p-7 flex flex-col justify-center gap-2">
+                <div className="flex flex-wrap gap-2">
+                  {m.badges.map(b => (
+                    <span key={b.label} className={`px-3 py-1 ${b.color} text-xs font-bold rounded-full uppercase tracking-wider`}>{b.label}</span>
+                  ))}
+                </div>
+                <h3 className="text-2xl font-extrabold text-primary">{m.name}</h3>
+                <p className="text-secondary font-bold text-xs uppercase tracking-widest">{m.role}</p>
+                <p className="text-on-surface-variant text-sm leading-relaxed">{m.description}</p>
+                {m.stats.length > 0 && (
+                  <div className="flex flex-wrap gap-6 pt-4 mt-2 border-t border-outline-variant/10">
+                    {m.stats.map(s => (
+                      <div key={s.label}>
+                        <p className="text-xl font-extrabold text-primary">{s.value}</p>
+                        <p className="text-xs text-on-surface-variant">{s.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
           ))}
         </div>
-        <div className="flex gap-3">
-          <button onClick={prev} aria-label="Anterior" className="w-11 h-11 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-white hover:border-primary transition-all active:scale-95">
-            <span className="material-symbols-outlined text-lg">chevron_left</span>
-          </button>
-          <button onClick={next} aria-label="Siguiente" className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-all active:scale-95">
-            <span className="material-symbols-outlined text-lg">chevron_right</span>
-          </button>
+
+        {/* Controles */}
+        <div className="flex items-center justify-between mt-6">
+          <div className="flex gap-3">
+            {team.map((_, i) => (
+              <button key={i} onClick={() => goTo(i)} aria-label={`Ver ${team[i].name}`}>
+                <span className={`block rounded-full transition-all duration-200 ${
+                  active === i ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-outline-variant/40 hover:bg-primary/40"
+                }`} />
+              </button>
+            ))}
+          </div>
+          <div className="flex gap-3">
+            <button onClick={prev} aria-label="Anterior" className="w-11 h-11 rounded-full border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-white hover:border-primary transition-all active:scale-95">
+              <span className="material-symbols-outlined text-lg">chevron_left</span>
+            </button>
+            <button onClick={next} aria-label="Siguiente" className="w-11 h-11 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-all active:scale-95">
+              <span className="material-symbols-outlined text-lg">chevron_right</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

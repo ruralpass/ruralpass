@@ -84,8 +84,8 @@ export default function Casos() {
       {/* Interactive Map (Visual) */}
       <section className="py-24 bg-surface-container-low overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-16 items-center">
-            <div className="md:w-1/2">
+          <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
+            <div className="w-full md:w-1/2">
               <h2 className="text-4xl font-black text-primary leading-tight mb-6">Presencia de Arica a Chiloé</h2>
               <p className="text-on-surface-variant mb-8 leading-relaxed">
                 Nuestros equipos recorren Chile central y sur, adaptando cada solución a las condiciones climáticas específicas de cada zona. Desde la radiación extrema del norte hasta la humedad del sur profundo.
@@ -107,8 +107,8 @@ export default function Casos() {
                 </li>
               </ul>
             </div>
-            <div className="md:w-1/2 relative bg-white p-4 rounded-2xl shadow-xl">
-              <div className="aspect-[3/4] w-full bg-surface-container-highest rounded-xl overflow-hidden relative">
+            <div className="w-full md:w-1/2 relative bg-white p-4 rounded-2xl shadow-xl">
+              <div className="relative w-full h-80 md:aspect-[3/4] md:h-auto bg-surface-container-highest rounded-xl overflow-hidden">
                 <Image 
                   src="/images/presencia-arica-chiloe.png"
                   alt="Presencia RuralPass de Arica a Chiloé"

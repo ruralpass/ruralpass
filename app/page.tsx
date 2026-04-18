@@ -218,9 +218,9 @@ export default function Home() {
             <h2 className="text-label-md font-bold tracking-widest text-secondary uppercase mb-2">Opiniones Reales</h2>
             <h3 className="text-4xl font-extrabold text-primary tracking-tight">Confianza en el Terreno</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-8 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 pb-4 md:pb-0 hide-scrollbar">
             {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 relative">
+            <div className="min-w-[85vw] md:min-w-0 snap-center bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 relative shrink-0">
               <div className="flex text-secondary-container mb-4">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
@@ -238,7 +238,7 @@ export default function Home() {
               </div>
             </div>
             {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 relative">
+            <div className="min-w-[85vw] md:min-w-0 snap-center bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 relative shrink-0">
               <div className="flex text-secondary-container mb-4">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
@@ -256,7 +256,7 @@ export default function Home() {
               </div>
             </div>
             {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 relative">
+            <div className="min-w-[85vw] md:min-w-0 snap-center bg-white p-8 rounded-xl shadow-sm border border-outline-variant/10 relative shrink-0">
               <div className="flex text-secondary-container mb-4">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
