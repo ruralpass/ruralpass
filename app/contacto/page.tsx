@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ContactForm from '@/components/ContactForm';
 
 export default function Contacto() {
   return (
@@ -74,41 +75,7 @@ export default function Contacto() {
               <h2 className="text-primary text-3xl font-extrabold tracking-tight mb-2">Solicitar Soporte Técnico</h2>
               <p className="text-on-surface-variant">Complete el formulario y un especialista lo contactará en menos de 2 horas.</p>
             </div>
-            <form action="#" className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Nombre</label>
-                <input className="bg-surface-container-lowest border-outline-variant/20 rounded-lg p-4 focus:ring-2 focus:ring-primary-fixed-dim outline-none transition-all" placeholder="Ej: Juan Pérez" type="text" />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Teléfono</label>
-                <input className="bg-surface-container-lowest border-outline-variant/20 rounded-lg p-4 focus:ring-2 focus:ring-primary-fixed-dim outline-none transition-all" placeholder="+56 9 1234 5678" type="tel" />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Ubicación (Comuna)</label>
-                <input className="bg-surface-container-lowest border-outline-variant/20 rounded-lg p-4 focus:ring-2 focus:ring-primary-fixed-dim outline-none transition-all" placeholder="Ej: San Clemente" type="text" />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Tipo de Sistema</label>
-                <select className="bg-surface-container-lowest border-outline-variant/20 rounded-lg p-4 focus:ring-2 focus:ring-primary-fixed-dim outline-none transition-all">
-                  <option>Solar</option>
-                  <option>Seguridad</option>
-                  <option>Control de Acceso</option>
-                  <option>Cercos Eléctricos</option>
-                  <option>Telecomunicaciones</option>
-                  <option>Otro</option>
-                </select>
-              </div>
-              <div className="md:col-span-2 flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Descripción del problema</label>
-                <textarea className="bg-surface-container-lowest border-outline-variant/20 rounded-lg p-4 focus:ring-2 focus:ring-primary-fixed-dim outline-none transition-all" placeholder="Describa brevemente lo que ocurre con su sistema..." rows={4}></textarea>
-              </div>
-              <div className="md:col-span-2 mt-4">
-                <button className="w-full bg-primary text-white font-black py-4 px-8 rounded-lg uppercase tracking-widest hover:brightness-125 transition-all flex items-center justify-center gap-3" type="submit">
-                  Enviar Requerimiento
-                  <span className="material-symbols-outlined">send</span>
-                </button>
-              </div>
-            </form>
+            <ContactForm />
           </div>
 
           {/* Info Cards Column */}
