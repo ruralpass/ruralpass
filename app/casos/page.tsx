@@ -130,7 +130,7 @@ export default function Casos() {
           <p className="text-on-primary-container text-lg mb-10 max-w-2xl mx-auto relative z-10">
             Únete a los cientos de propietarios rurales que ya aseguraron su futuro energético y la tranquilidad de su hogar.
           </p>
-          <Link href="#" className="inline-flex items-center gap-3 bg-secondary text-white px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 active:scale-95 transition-all relative z-10">
+          <Link href="https://wa.me/56956277070" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-secondary text-white px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 active:scale-95 transition-all relative z-10">
             <span className="material-symbols-outlined">chat</span>
             Conversemos por WhatsApp
           </Link>

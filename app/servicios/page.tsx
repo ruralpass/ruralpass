@@ -246,7 +246,7 @@ export default function Servicios() {
               <p className="text-primary-fixed-dim text-lg leading-relaxed mb-10">Implementamos sistemas de energía solar, conectividad y seguridad adaptados a zonas rurales y condiciones complejas, asegurando operación continua y soluciones confiables en cada proyecto.</p>
               <p className="text-primary-fixed-dim text-lg leading-relaxed mb-10">Evaluamos cada caso de forma técnica para entregar soluciones eficientes, sostenibles y ajustadas a las necesidades reales de nuestros clientes.</p>
               <div className="flex flex-wrap gap-4">
-                <Link href="#" className="bg-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition-all flex items-center gap-3 shadow-lg">
+                <Link href="https://wa.me/56956277070" target="_blank" rel="noopener noreferrer" className="bg-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition-all flex items-center gap-3 shadow-lg">
                   <span className="material-symbols-outlined">call</span>
                   WhatsApp Técnico
                 </Link>

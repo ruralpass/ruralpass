@@ -69,7 +69,7 @@ export default function Home() {
               {heroSlides[currentSlide].description}
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Link href="#" className="bg-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition-all flex items-center gap-2 shadow-lg">
+              <Link href="https://wa.me/56956277070" target="_blank" rel="noopener noreferrer" className="bg-secondary text-white px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition-all flex items-center gap-2 shadow-lg">
                 <span className="material-symbols-outlined">call</span>
                 WhatsApp
               </Link>

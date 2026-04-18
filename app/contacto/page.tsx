@@ -43,7 +43,7 @@ export default function Contacto() {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-secondary-container opacity-20 rounded-full blur-3xl"></div>
               <div className="relative z-10 flex flex-col gap-4">
-                <Link href="https://wa.me/yourwhatsapp" className="group flex items-center justify-between bg-secondary-container/20 border border-white/20 backdrop-blur-sm text-white p-6 rounded-xl hover:bg-secondary-container/30 transition-all shadow-lg">
+                <Link href="https://wa.me/56956277070" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between bg-secondary-container/20 border border-white/20 backdrop-blur-sm text-white p-6 rounded-xl hover:bg-secondary-container/30 transition-all shadow-lg">
                   <div className="flex items-center gap-4">
                     <div className="bg-white/20 p-3 rounded-lg">
                       <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>emergency_home</span>
