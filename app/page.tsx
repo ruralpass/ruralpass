@@ -6,6 +6,21 @@ import ServicesSlider from '@/components/ServicesSlider';
 import TeamStackingCards from '@/components/TeamStackingCards';
 import { sanityClient } from '@/lib/sanity';
 
+type TrustItem = {
+  _key: string;
+  icon: string;
+  title: string;
+  subtitle: string;
+};
+
+const FALLBACK_TRUST: TrustItem[] = [
+  { _key: 't1', icon: 'verified', title: 'Certificación SEC', subtitle: 'Estándares eléctricos nacionales' },
+  { _key: 't2', icon: 'timer', title: 'Respuesta < 24h', subtitle: 'Prioridad en zonas remotas' },
+  { _key: 't3', icon: 'shield_with_heart', title: 'Diagnóstico Transparente', subtitle: 'Sin cobros ocultos de traslado' },
+];
+
+const TRUST_QUERY = `*[_type == "trustBarConfig"][0]{ items[] }`;
+
 type HeroSlide = {
   _key: string;
   backgroundImage?: { asset?: { url: string } };
@@ -79,10 +94,14 @@ const HERO_QUERY = `*[_type == "heroConfig"][0]{
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [heroSlides, setHeroSlides] = useState<HeroSlide[]>(FALLBACK_SLIDES);
+  const [trustItems, setTrustItems] = useState<TrustItem[]>(FALLBACK_TRUST);
 
   useEffect(() => {
     sanityClient.fetch<{ slides: HeroSlide[] }>(HERO_QUERY)
       .then((res) => { if (res?.slides?.length) setHeroSlides(res.slides); })
+      .catch(() => {});
+    sanityClient.fetch<{ items: TrustItem[] }>(TRUST_QUERY)
+      .then((res) => { if (res?.items?.length) setTrustItems(res.items); })
       .catch(() => {});
   }, []);
 
@@ -163,33 +182,17 @@ export default function Home() {
       {/* Trust Bar */}
       <div className="bg-surface-container-low border-b border-outline-variant/10">
         <div className="max-w-7xl mx-auto px-6 py-8 flex flex-wrap justify-between items-center gap-8">
-          <div className="flex items-center gap-4 group">
-            <div className="w-14 h-14 bg-primary/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 flex items-center justify-center">
-              <span className="material-symbols-outlined text-2xl">verified</span>
+          {trustItems.map((item) => (
+            <div key={item._key} className="flex items-center gap-4 group">
+              <div className="w-14 h-14 bg-primary/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 flex items-center justify-center">
+                <span className="material-symbols-outlined text-2xl">{item.icon}</span>
+              </div>
+              <div>
+                <p className="text-sm font-bold text-primary">{item.title}</p>
+                <p className="text-xs text-on-surface-variant">{item.subtitle}</p>
+              </div>
             </div>
-            <div>
-              <p className="text-sm font-bold text-primary">Certificación SEC</p>
-              <p className="text-xs text-on-surface-variant">Estándares eléctricos nacionales</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 group">
-            <div className="w-14 h-14 bg-primary/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 flex items-center justify-center">
-              <span className="material-symbols-outlined text-2xl">timer</span>
-            </div>
-            <div>
-              <p className="text-sm font-bold text-primary">Respuesta &lt; 24h</p>
-              <p className="text-xs text-on-surface-variant">Prioridad en zonas remotas</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 group">
-            <div className="w-14 h-14 bg-primary/5 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 flex items-center justify-center">
-              <span className="material-symbols-outlined text-2xl">shield_with_heart</span>
-            </div>
-            <div>
-              <p className="text-sm font-bold text-primary">Diagnóstico Transparente</p>
-              <p className="text-xs text-on-surface-variant">Sin cobros ocultos de traslado</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
