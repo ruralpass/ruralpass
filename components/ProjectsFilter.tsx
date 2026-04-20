@@ -9,7 +9,7 @@ const projects = [
   {
     id: 1,
     category: 'Paneles Solares' as Category,
-    image: '/images/colbun.png',
+    image: '/images/colbun.webp',
     alt: 'Instalación paneles solares off-grid Colbún',
     badgeColor: 'bg-tertiary',
     badgeLabel: 'Solar',
@@ -25,7 +25,7 @@ const projects = [
   {
     id: 2,
     category: 'Cámaras de Seguridad' as Category,
-    image: '/images/panguipulli.png',
+    image: '/images/panguipulli.webp',
     alt: 'Sistema vigilancia perimetral Panguipulli',
     badgeColor: 'bg-primary',
     badgeLabel: 'Seguridad',
@@ -41,7 +41,7 @@ const projects = [
   {
     id: 3,
     category: 'Mantención' as Category,
-    image: '/images/fotovoltaica.png',
+    image: '/images/fotovoltaica.webp',
     alt: 'Mantención optimización fotovoltaica Pirque',
     badgeColor: 'bg-secondary',
     badgeLabel: 'Mantención',

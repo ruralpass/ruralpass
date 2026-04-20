@@ -35,7 +35,7 @@ export default function Casos() {
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-secondary-container opacity-20 rounded-full blur-3xl"></div>
               <div className="relative z-10 aspect-[4/3] rounded-xl shadow-2xl overflow-hidden">
                 <Image 
-                  src="/images/banner-pagina-casos.png"
+                  src="/images/banner-pagina-casos.webp"
                   alt="Instalación RuralPass"
                   fill
                   className="object-cover"
@@ -110,7 +110,7 @@ export default function Casos() {
             <div className="w-full md:w-1/2 relative bg-white p-4 rounded-2xl shadow-xl">
               <div className="relative w-full h-80 md:aspect-[3/4] md:h-auto bg-surface-container-highest rounded-xl overflow-hidden">
                 <Image 
-                  src="/images/presencia-arica-chiloe.png"
+                  src="/images/presencia-arica-chiloe.webp"
                   alt="Presencia RuralPass de Arica a Chiloé"
                   fill
                   className="object-cover"

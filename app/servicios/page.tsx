@@ -257,7 +257,7 @@ export default function Servicios() {
             </div>
             <div className="lg:w-1/2 relative min-h-[300px]">
               <Image 
-                src="/images/banner-tarjeta-servicios.png"
+                src="/images/banner-tarjeta-servicios.webp"
                 alt="Técnico instalando soluciones de conectividad y energía en terreno"
                 fill
                 className="object-cover brightness-90 contrast-110"

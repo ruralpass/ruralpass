@@ -48,7 +48,7 @@ const services = [
       "Tecnología adaptable a cada entorno, con instalación y soporte especializado.",
       "Control y protección mediante sistemas confiables y de alta precisión.",
     ],
-    image: "/images/control-de-acceso.png",
+    image: "/images/control-de-acceso.webp",
     imageAlt: "Control de acceso instalado en zona rural",
   },
   {

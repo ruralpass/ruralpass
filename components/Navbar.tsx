@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import navbarLogo from "../logo-navbar-final.png";
+import navbarLogo from "../logo-navbar-final.webp";
 
 export default function Navbar() {
   const pathname = usePathname();

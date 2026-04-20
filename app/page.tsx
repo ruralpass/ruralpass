@@ -10,19 +10,19 @@ export default function Home() {
 
   const heroSlides = [
     {
-      image: "/images/slide-1-ruralpass.png",
+      image: "/images/slide-1-ruralpass.webp",
       tag: "Energía Solar",
       title: "Energía <span class='text-secondary-container'>Solar</span>",
       description: "Energía solar off grid eficiente y confiable para una verdadera independencia energética."
     },
     {
-      image: "/images/slide-2-ruralpass.png",
+      image: "/images/slide-2-ruralpass.webp",
       tag: "Seguridad",
       title: "Sistemas de <span class='text-secondary-container'>Seguridad</span>",
       description: "Sistemas de seguridad inteligentes que protegen tu entorno con tecnología y precisión."
     },
     {
-      image: "/images/slide-3-ruralpass.png",
+      image: "/images/slide-3-ruralpass.webp",
       tag: "Telecomunicaciones",
       title: "<span class='text-secondary-container'>Telecomunicaciones</span>",
       description: "Conectividad estable y de alto rendimiento para mantenerte siempre comunicado."
@@ -169,7 +169,7 @@ export default function Home() {
             <div className="aspect-square bg-surface-container-high rounded-full absolute -top-10 -left-10 w-64 h-64 blur-3xl opacity-50"></div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image 
-                src="/images/cobertura-nacional.png"
+                src="/images/cobertura-nacional.webp"
                 alt="Cobertura Nacional RuralPass"
                 width={800}
                 height={600}
@@ -417,7 +417,7 @@ export default function Home() {
             <h2 className="text-4xl font-extrabold text-primary tracking-tight">Nuestro Equipo</h2>
           </div>
           <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden">
-            <Image src="/images/banner-nuestro-equipo.png" alt="Nuestro Equipo RuralPass" fill className="object-cover object-center" />
+            <Image src="/images/banner-nuestro-equipo.webp" alt="Nuestro Equipo RuralPass" fill className="object-cover object-center" />
           </div>
         </div>
 

@@ -11,7 +11,7 @@ const team = [
   {
     name: "Francisco Espinoza",
     role: "Gerente General y Encargado de Operaciones",
-    image: "/images/testimonio1.png",
+    image: "/images/testimonio1.webp",
     badges: [{ label: "Fundador", color: "bg-primary/10 text-primary" }, { label: "Operaciones", color: "bg-secondary/10 text-secondary" }],
     description: "Lidera cada proyecto con visión técnica y compromiso de terreno. Más de 8 años coordinando instalaciones de sistemas solares y eléctricos en zonas rurales de Chile central y sur.",
     stats: [{ value: "+120", label: "Proyectos liderados" }, { value: "8", label: "Años de exp." }, { value: "6", label: "Regiones" }],
@@ -19,7 +19,7 @@ const team = [
   {
     name: "Gonzalo Valenzuela",
     role: "Especialista en Montaje y Obras Civiles",
-    image: "/images/testimonio2.png",
+    image: "/images/testimonio2.webp",
     badges: [{ label: "Montaje", color: "bg-primary/10 text-primary" }, { label: "Fotovoltaico", color: "bg-secondary/10 text-secondary" }, { label: "Obras Civiles", color: "bg-tertiary/10 text-tertiary" }],
     description: "Técnico especialista en sistemas fotovoltaicos con dominio completo en instalación de estructuras, cableado de potencia y ejecución de obras civiles para proyectos energéticos rurales.",
     stats: [{ value: "+80", label: "Instalaciones" }, { value: "500+", label: "Paneles montados" }],
@@ -27,7 +27,7 @@ const team = [
   {
     name: "Maria Francisca Menares",
     role: "Jefa de Recursos Humanos y Comunicaciones",
-    image: "/images/testimonio3.png",
+    image: "/images/testimonio3.webp",
     badges: [{ label: "RRHH", color: "bg-primary/10 text-primary" }, { label: "Comunicaciones", color: "bg-secondary/10 text-secondary" }],
     description: "Responsable de la gestión del talento humano y la comunicación institucional de RuralPass. Asegura que cada cliente reciba una atención oportuna y que el equipo opere con los más altos estándares de profesionalismo.",
     stats: [{ value: "100%", label: "Atención al cliente" }, { value: "3+", label: "Años en RuralPass" }],

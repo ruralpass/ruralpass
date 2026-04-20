@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import footerLogo from '../logo-ruralpass-footer-final.png';
+import footerLogo from '../logo-ruralpass-footer-final.webp';
 
 export default function Footer() {
   const [privacyOpen, setPrivacyOpen] = useState(false);
