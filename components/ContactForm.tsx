@@ -2,10 +2,11 @@
 
 import { useState, FormEvent } from 'react';
 
-type Status = 'idle' | 'loading' | 'success' | 'error';
+type Status = 'idle' | 'loading' | 'success' | 'error' | 'network_error';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
   const [form, setForm] = useState({
     nombre: '',
     telefono: '',
@@ -21,17 +22,23 @@ export default function ContactForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus('loading');
+    setErrorMsg('');
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data?.error || 'No se pudo procesar el mensaje.');
+        setStatus('error');
+        return;
+      }
       setStatus('success');
       setForm({ nombre: '', telefono: '', ubicacion: '', tipoSistema: 'Solar', descripcion: '' });
     } catch {
-      setStatus('error');
+      setStatus('network_error');
     }
   };
 
@@ -39,18 +46,41 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
-        <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
-          <span className="material-symbols-outlined text-4xl text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+      <div className="flex flex-col items-center justify-center gap-6 py-14 text-center animate-in fade-in duration-500">
+        <div className="relative flex items-center justify-center w-20 h-20">
+          <div className="absolute inset-0 rounded-full bg-green-500/10 animate-ping" style={{ animationDuration: '1.8s' }} />
+          <div className="w-20 h-20 rounded-full bg-green-500/15 flex items-center justify-center">
+            <span className="material-symbols-outlined text-5xl text-green-600" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+          </div>
         </div>
-        <h3 className="text-xl font-extrabold text-primary">¡Mensaje enviado con éxito!</h3>
-        <p className="text-on-surface-variant text-sm max-w-xs">Un especialista te contactará en menos de 2 horas. También puedes escribirnos directamente por WhatsApp.</p>
-        <button
-          onClick={() => setStatus('idle')}
-          className="mt-4 text-sm font-bold text-primary underline underline-offset-4"
-        >
-          Enviar otro mensaje
-        </button>
+        <div>
+          <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-1 mb-4">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-green-700 text-xs font-bold uppercase tracking-widest">Mensaje entregado</span>
+          </div>
+          <h3 className="text-2xl font-extrabold text-primary mb-2">¡Requerimiento enviado con éxito!</h3>
+          <p className="text-on-surface-variant text-sm max-w-sm mx-auto leading-relaxed">
+            Tu solicitud fue recibida correctamente. Un especialista te contactará en <strong>menos de 2 horas</strong>.
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3 mt-2">
+          <a
+            href="https://wa.me/56956277070"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-green-600 text-white font-bold px-5 py-3 rounded-lg text-sm hover:bg-green-700 transition-colors"
+          >
+            <span className="material-symbols-outlined text-lg">chat</span>
+            Escribir por WhatsApp
+          </a>
+          <button
+            onClick={() => setStatus('idle')}
+            className="flex items-center gap-2 border border-outline-variant/30 text-on-surface-variant font-bold px-5 py-3 rounded-lg text-sm hover:bg-surface-container transition-colors"
+          >
+            <span className="material-symbols-outlined text-lg">add</span>
+            Nuevo requerimiento
+          </button>
+        </div>
       </div>
     );
   }
@@ -126,10 +156,23 @@ export default function ContactForm() {
         />
       </div>
 
-      {status === 'error' && (
-        <div className="md:col-span-2 flex items-center gap-3 bg-error/10 border border-error/20 rounded-lg px-4 py-3">
-          <span className="material-symbols-outlined text-error text-xl">error</span>
-          <p className="text-sm text-error font-medium">Hubo un error al enviar. Intenta de nuevo o escríbenos por WhatsApp.</p>
+      {(status === 'error' || status === 'network_error') && (
+        <div className="md:col-span-2 flex items-start gap-4 bg-red-50 border border-red-200 rounded-xl px-5 py-4 animate-in fade-in duration-300">
+          <div className="shrink-0 w-9 h-9 rounded-full bg-red-100 flex items-center justify-center mt-0.5">
+            <span className="material-symbols-outlined text-red-600 text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+              {status === 'network_error' ? 'wifi_off' : 'cancel'}
+            </span>
+          </div>
+          <div>
+            <p className="text-sm font-extrabold text-red-700 mb-0.5">
+              {status === 'network_error' ? 'Sin conexión a Internet' : 'No se pudo enviar el mensaje'}
+            </p>
+            <p className="text-xs text-red-600/80 leading-relaxed">
+              {status === 'network_error'
+                ? 'Revisa tu conexión e intenta de nuevo. Si el problema persiste, contáctanos por WhatsApp.'
+                : errorMsg || 'Ocurrió un error inesperado. Por favor intenta de nuevo o contáctanos por WhatsApp.'}
+            </p>
+          </div>
         </div>
       )}
 
@@ -142,7 +185,7 @@ export default function ContactForm() {
           {status === 'loading' ? (
             <>
               <span className="material-symbols-outlined animate-spin text-xl">progress_activity</span>
-              Enviando...
+              Enviando requerimiento...
             </>
           ) : (
             <>
@@ -151,6 +194,11 @@ export default function ContactForm() {
             </>
           )}
         </button>
+        {status === 'loading' && (
+          <p className="text-center text-xs text-on-surface-variant mt-3 animate-pulse">
+            Procesando y enviando tu solicitud...
+          </p>
+        )}
       </div>
     </form>
   );

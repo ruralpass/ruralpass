@@ -1,6 +1,169 @@
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
+const SYSTEM_ICONS: Record<string, string> = {
+  Solar: '☀️',
+  Seguridad: '🔒',
+  'Control de Acceso': '🚪',
+  'Cercos Eléctricos': '⚡',
+  Telecomunicaciones: '📡',
+  Otro: '🔧',
+};
+
+const SYSTEM_COLORS: Record<string, string> = {
+  Solar: '#f59e0b',
+  Seguridad: '#6366f1',
+  'Control de Acceso': '#0ea5e9',
+  'Cercos Eléctricos': '#f97316',
+  Telecomunicaciones: '#10b981',
+  Otro: '#64748b',
+};
+
+function buildEmailHtml(nombre: string, telefono: string, ubicacion: string, tipoSistema: string, descripcion: string): string {
+  const icon = SYSTEM_ICONS[tipoSistema] ?? '🔧';
+  const badgeColor = SYSTEM_COLORS[tipoSistema] ?? '#64748b';
+  const now = new Date().toLocaleString('es-CL', {
+    timeZone: 'America/Santiago',
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+
+  return `<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /></head>
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:'Segoe UI',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
+
+          <!-- HEADER -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#0f2d5e 0%,#1a4a8a 100%);padding:32px 40px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <img
+                      src="https://ruralpass.cl/images/logo-ruralpass.webp"
+                      alt="RuralPass"
+                      height="48"
+                      style="display:block;height:48px;width:auto;"
+                    />
+                  </td>
+                  <td align="right">
+                    <span style="display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;">
+                      Soporte Técnico
+                    </span>
+                  </td>
+                </tr>
+              </table>
+              <p style="color:#93c5fd;font-size:13px;margin:20px 0 0;letter-spacing:0.03em;">
+                Nuevo requerimiento recibido desde <strong style="color:#bfdbfe;">ruralpass.cl</strong>
+              </p>
+            </td>
+          </tr>
+
+          <!-- BADGE TIPO DE SISTEMA -->
+          <tr>
+            <td style="background:#0f2d5e;padding:0 40px 24px;">
+              <table cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="background:${badgeColor};border-radius:999px;padding:6px 18px;">
+                    <span style="color:#fff;font-size:13px;font-weight:700;">${icon} ${tipoSistema}</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- BODY -->
+          <tr>
+            <td style="background:#ffffff;padding:36px 40px;">
+
+              <!-- TITLE -->
+              <h1 style="margin:0 0 6px;font-size:22px;font-weight:800;color:#0f2d5e;line-height:1.3;">
+                Nuevo Requerimiento de Soporte
+              </h1>
+              <p style="margin:0 0 28px;font-size:13px;color:#64748b;">${now}</p>
+
+              <!-- DATOS DEL CLIENTE -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:24px;">
+                <tr>
+                  <td colspan="2" style="background:#f8fafc;padding:12px 20px;border-bottom:1px solid #e2e8f0;">
+                    <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#64748b;">Datos del cliente</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;width:38%;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#94a3b8;">Nombre</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:15px;font-weight:700;color:#0f172a;">${nombre}</td>
+                </tr>
+                <tr style="background:#fafafa;">
+                  <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#94a3b8;">Teléfono</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:15px;color:#0f172a;">
+                    <a href="tel:${telefono}" style="color:#1a4a8a;font-weight:700;text-decoration:none;">${telefono}</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:14px 20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#94a3b8;">Ubicación</td>
+                  <td style="padding:14px 20px;font-size:15px;color:#0f172a;">${ubicacion || '<span style="color:#cbd5e1;">No especificada</span>'}</td>
+                </tr>
+              </table>
+
+              <!-- DESCRIPCIÓN -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:32px;">
+                <tr>
+                  <td style="background:#f8fafc;padding:12px 20px;border-bottom:1px solid #e2e8f0;">
+                    <span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#64748b;">Descripción del problema</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:20px;font-size:15px;color:#1e293b;line-height:1.7;">${descripcion}</td>
+                </tr>
+              </table>
+
+              <!-- CTA BUTTONS -->
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding-right:8px;" width="50%">
+                    <a href="https://wa.me/56956277070?text=Hola%20${encodeURIComponent(nombre)}%2C%20recibimos%20tu%20requerimiento%20de%20soporte."
+                      style="display:block;background:#25d366;color:#fff;font-size:14px;font-weight:700;text-align:center;text-decoration:none;padding:14px 20px;border-radius:10px;">
+                      💬 Responder por WhatsApp
+                    </a>
+                  </td>
+                  <td style="padding-left:8px;" width="50%">
+                    <a href="tel:${telefono}"
+                      style="display:block;background:#0f2d5e;color:#fff;font-size:14px;font-weight:700;text-align:center;text-decoration:none;padding:14px 20px;border-radius:10px;">
+                      📞 Llamar al cliente
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:24px 40px;text-align:center;">
+              <p style="margin:0 0 6px;font-size:12px;color:#94a3b8;">
+                Este mensaje fue generado automáticamente desde el formulario de contacto de
+                <a href="https://ruralpass.cl" style="color:#1a4a8a;text-decoration:none;font-weight:600;">ruralpass.cl</a>
+              </p>
+              <p style="margin:0;font-size:12px;color:#cbd5e1;">RuralPass SpA · Colo Colo 379 Of. 706, Concepción, Chile</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
+
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
@@ -13,42 +176,8 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'RuralPass <contacto@ruralpass.cl>',
       to: 'ruralpass.spa@gmail.com',
-      subject: `Nuevo requerimiento de soporte — ${nombre}`,
-      html: `
-        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1a3a6b;">
-          <div style="background: #1a3a6b; padding: 24px 32px; border-radius: 12px 12px 0 0;">
-            <h1 style="color: white; margin: 0; font-size: 20px;">Nuevo Requerimiento de Soporte Técnico</h1>
-            <p style="color: #90b8e8; margin: 4px 0 0; font-size: 13px;">Recibido desde ruralpass.cl</p>
-          </div>
-          <div style="background: #f6faf7; padding: 32px; border-radius: 0 0 12px 12px; border: 1px solid #e4eef5; border-top: none;">
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #e4eef5; font-weight: bold; width: 40%; color: #3d4d42; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Nombre</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #e4eef5; font-size: 15px;">${nombre}</td>
-              </tr>
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #e4eef5; font-weight: bold; color: #3d4d42; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Teléfono</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #e4eef5; font-size: 15px;">${telefono}</td>
-              </tr>
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #e4eef5; font-weight: bold; color: #3d4d42; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Ubicación</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #e4eef5; font-size: 15px;">${ubicacion || '—'}</td>
-              </tr>
-              <tr>
-                <td style="padding: 10px 0; border-bottom: 1px solid #e4eef5; font-weight: bold; color: #3d4d42; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Tipo de Sistema</td>
-                <td style="padding: 10px 0; border-bottom: 1px solid #e4eef5; font-size: 15px;">${tipoSistema || '—'}</td>
-              </tr>
-              <tr>
-                <td style="padding: 10px 0; font-weight: bold; color: #3d4d42; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; vertical-align: top; padding-top: 16px;">Descripción</td>
-                <td style="padding: 10px 0; font-size: 15px; padding-top: 16px; line-height: 1.6;">${descripcion}</td>
-              </tr>
-            </table>
-            <div style="margin-top: 32px; padding: 16px; background: #e8a020; border-radius: 8px; text-align: center;">
-              <a href="https://wa.me/56956277070" style="color: white; font-weight: bold; text-decoration: none; font-size: 15px;">Responder por WhatsApp →</a>
-            </div>
-          </div>
-        </div>
-      `,
+      subject: `${SYSTEM_ICONS[tipoSistema] ?? '🔧'} Nuevo requerimiento — ${nombre} (${tipoSistema})`,
+      html: buildEmailHtml(nombre, telefono, ubicacion ?? '', tipoSistema ?? 'Otro', descripcion),
     });
 
     return NextResponse.json({ ok: true });
