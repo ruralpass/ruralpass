@@ -58,8 +58,9 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div className="flex flex-col gap-2">
-        <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Nombre *</label>
+        <label htmlFor="nombre" className="text-xs font-bold uppercase tracking-widest text-primary/60">Nombre *</label>
         <input
+          id="nombre"
           name="nombre"
           value={form.nombre}
           onChange={handleChange}
@@ -70,8 +71,9 @@ export default function ContactForm() {
         />
       </div>
       <div className="flex flex-col gap-2">
-        <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Teléfono *</label>
+        <label htmlFor="telefono" className="text-xs font-bold uppercase tracking-widest text-primary/60">Teléfono *</label>
         <input
+          id="telefono"
           name="telefono"
           value={form.telefono}
           onChange={handleChange}
@@ -82,8 +84,9 @@ export default function ContactForm() {
         />
       </div>
       <div className="flex flex-col gap-2">
-        <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Ubicación (Comuna)</label>
+        <label htmlFor="ubicacion" className="text-xs font-bold uppercase tracking-widest text-primary/60">Ubicación (Comuna)</label>
         <input
+          id="ubicacion"
           name="ubicacion"
           value={form.ubicacion}
           onChange={handleChange}
@@ -93,8 +96,9 @@ export default function ContactForm() {
         />
       </div>
       <div className="flex flex-col gap-2">
-        <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Tipo de Sistema</label>
+        <label htmlFor="tipoSistema" className="text-xs font-bold uppercase tracking-widest text-primary/60">Tipo de Sistema</label>
         <select
+          id="tipoSistema"
           name="tipoSistema"
           value={form.tipoSistema}
           onChange={handleChange}
@@ -109,8 +113,9 @@ export default function ContactForm() {
         </select>
       </div>
       <div className="md:col-span-2 flex flex-col gap-2">
-        <label className="text-xs font-bold uppercase tracking-widest text-primary/60">Descripción del problema *</label>
+        <label htmlFor="descripcion" className="text-xs font-bold uppercase tracking-widest text-primary/60">Descripción del problema *</label>
         <textarea
+          id="descripcion"
           name="descripcion"
           value={form.descripcion}
           onChange={handleChange}
