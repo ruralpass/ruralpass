@@ -42,8 +42,9 @@ export default function Navbar() {
 
   useEffect(() => {
     sanityClient.fetch<NavbarData>(QUERY).then((res) => {
+      console.log('[Sanity Navbar]', res);
       if (res) setData({ ...FALLBACK, ...res });
-    }).catch(() => {});
+    }).catch((err) => { console.error('[Sanity Navbar error]', err); });
   }, []);
 
   const navLinks = data.navLinks ?? FALLBACK.navLinks!;
