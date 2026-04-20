@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     }
 
     await resend.emails.send({
-      from: 'RuralPass Web <onboarding@resend.dev>',
+      from: 'RuralPass <contacto@ruralpass.cl>',
       to: 'ruralpass.spa@gmail.com',
       subject: `Nuevo requerimiento de soporte — ${nombre}`,
       html: `
