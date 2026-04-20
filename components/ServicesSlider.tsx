@@ -16,8 +16,7 @@ const services = [
       "Energía limpia y continua mediante sistemas independientes adaptados a cada necesidad.",
       "Optimización de la independencia energética con tecnología de alto rendimiento y soporte técnico especializado.",
     ],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBmgWq-2G-__jtiIlNKT6JUmpIZlenABJlOSEKNGf9j0CR_A1n_6RPel3-LekkrcMmCvMTGqBIqD9wfqxTF3o6BDCGu8g4awLVLChCaW5MBv5d0FT8qDdcZgtnbwfL0_fmLsW-3IyoVDatLYI6AD3jVQcdRwAVYmEjzJaCxa3JPRhsm8ZDk9IUGmaDeAu8TE-iRw4MYRB21dc8aHm8tKD1Rl3y-a6TYQmrPJRxLYLtkf0zzRk3LBtOT372h4Hb8K033oc5fCX0YObqQ",
+    image: "/images/img-baterias-inversores.webp",
     imageAlt: "Banco de baterías e inversores híbridos instalados",
   },
   {
@@ -32,8 +31,7 @@ const services = [
       "Soluciones de videovigilancia que combinan tecnología, prevención y respuesta oportuna.",
       "Seguridad integral con equipos de última generación y soporte continuo.",
     ],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA2SqU6LEGNv8sg6-deIfIjHElId19amHVkvkkv_j5jUGRG59AbABT2oMRD1NEQgNQpsKcAXH5NxleX5aY-mE_OENdM8LTuveMM9I_637b0vf7suphdOQxHDPuxyLVyORf15piyo6YzkVo15J6QNUw4KG09sZS8lmG0Uli7DhqNURvLqVIV0VzWplLXN6hQ9PRUiYHApJBiksJyMtrEUeP9uZJMPDlmGCaH8iuWlczq67jNUPMtbhPP6RRuMxOZdz7hQjDKk_W9Mo_p",
+    image: "/images/img-camara-seguridad.webp",
     imageAlt: "Torre de cámara de seguridad con panel solar",
   },
   {
@@ -63,8 +61,7 @@ const services = [
       "Infraestructura tecnológica diseñada para optimizar la comunicación.",
       "Conectividad satelital y LTE para los lugares más remotos de Chile.",
     ],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDlDZfz_RMpbFLzatfRaRxPjPV_LyXi1ck-k0zvteOkoxXE3vFqL4wnggXLmBxp0m5GPD_KNdKLCUsWaRD9c-WYcc4v_KWKZTMlMdsOV2iJ5O46coHSVbWknad0s1dveZHMp_AaQW5WeJtOKVk-rSmKbmg3mdzz5fC36pcR_FCLIp3mq0UU2rwf1MNVfYybjX96yQt5CialLrTGac2rp9pCI-xKirWRbpush6EagoEJiB_FKlkPQbhssqMy4jqDQbNve2j2rqQWeA_k",
+    image: "/images/img-telecomunicaciones-rural.webp",
     imageAlt: "Infraestructura de telecomunicaciones en zona rural",
   },
 ];

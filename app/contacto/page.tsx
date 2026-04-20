@@ -9,7 +9,7 @@ export default function Contacto() {
       <section className="relative min-h-[716px] flex items-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvie0gSGNJ7zy2hTu-2CpoSRQWUeMwAtXXJdAPmZKMiH4YqX_-68Gf39TqxiMyl5SYndFTLOJct2Far0FhxjoQo3OoENmcMLcNL4rCk4woXTBB792BTBYDQG4efs1-r-eaWemlMgO2Uj5ASfp7PD8i5ZQDgndYEicEC7F-WmxVPQpFJtb7rLjpaEew0qo8CpFR-AMny7_66DKjlJFp6oc96aIl_6kozL7dzJ5-rhFI6s5Rhq-yG3N2KqQjhA4wHdbnq83n2sbrI-QCy"
+            src="/images/img-contacto-terreno-b.webp"
             alt="Técnico RuralPass en terreno"
             fill
             className="object-cover opacity-40"
@@ -84,7 +84,7 @@ export default function Contacto() {
             <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-surface-container">
               <div className="h-64 bg-slate-200 relative">
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvie0gSGNJ7zy2hTu-2CpoSRQWUeMwAtXJdAPmZKMiH4YqX_-68Gf39TqxiMyl5SYndFTLOJct2Far0FhxjoQo3OoENmcMLcNL4rCk4woXTBB792BTBYDQG4efs1-r-eaWemlMgO2Uj5ASfp7PD8i5ZQDgndYEicEC7F-WmxVPQpFJtb7rLjpaEew0qo8CpFR-AMny7_66DKjlJFp6oc96aIl_6kozL7dzJ5-rhFI6s5Rhq-yG3N2KqQjhA4wHdbnq83n2sbrI-QCy"
+                  src="/images/img-contacto-terreno-a.webp"
                   alt="Map of central Chile showing rural coverage areas"
                   fill
                   className="object-cover grayscale opacity-40"
@@ -160,7 +160,7 @@ export default function Contacto() {
       <section className="max-w-7xl mx-auto px-6 mt-24 mb-24 py-16 bg-primary rounded-xl overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
           <Image 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5hVvs7FQfiqgswxmET1EXga5wv8B7v6fXqPlWaNIiZV-35Z5gSgjT0Qk880-9xOnK0XW-KmaQsEg-xSZ-iaYObRfZ4rhkGZKjXWh76AAZvww0D0AOkQUwVHjFDAgDGfexBl3C6RwN84MJzFI0m1rsikGxIBDMmLbZh1h8xq_Eo3F1gp7kePxCEUJSSglDvmg61NmkeBi53RwUDMNeOo3rLon_5foDwBL8AJnwoZXZTAMIn0pYm7KTWf2XS4UHd3J7WmVqGCQChWpc"
+            src="/images/img-solar-panel-close.webp"
             alt="close up of solar panel surface"
             fill
             className="object-cover"

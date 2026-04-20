@@ -335,7 +335,7 @@ export default function Home() {
             <div className="min-w-[85vw] md:min-w-0 snap-center bg-white/5 rounded-xl overflow-hidden border border-white/10 group">
               <div className="h-64 relative">
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2XBvY9ZSSMHvG1jvlES7iQ9arFgO0snCdgzJSDkRZr42aY1OJtUxa0aOA7lBTNshk8KhTv8wtCtPq3j2tCfwoHPYgjwmcR44EHJxLkVClwJjBryxOzDW4sFs5YWTrCGwRDrdIwf08ESC7eM_aAy0W62Du9FH0jBJYNU0VXoR0_6LtPQZ3ZR3c1v-CPWiIvPrDoOwgs7cug6k_PkB4blkR6nuZsstcz3hokPbnl391T9Ga3BUb-d6UNioJ8WmxP91AHNZSz-MWYWx6"
+                  src="/images/img-casa-rural-solar.webp"
                   alt="Modern wooden house in a rural Chilean valley with solar panels"
                   fill
                   className="object-cover transition-transform group-hover:scale-105"
@@ -359,7 +359,7 @@ export default function Home() {
             <div className="min-w-[85vw] md:min-w-0 snap-center bg-white/5 rounded-xl overflow-hidden border border-white/10 group">
               <div className="h-64 relative">
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2SqU6LEGNv8sg6-deIfIjHElId19amHVkvkkv_j5jUGRG59AbABT2oMRD1NEQgNQpsKcAXH5NxleX5aY-mE_OENdM8LTuveMM9I_637b0vf7suphdOQxHDPuxyLVyORf15piyo6YzkVo15J6QNUw4KG09sZS8lmG0Uli7DhqNURvLqVIV0VzWplLXN6hQ9PRUiYHApJBiksJyMtrEUeP9uZJMPDlmGCaH8iuWlczq67jNUPMtbhPP6RRuMxOZdz7hQjDKk_W9Mo_p"
+                  src="/images/img-camara-seguridad.webp"
                   alt="Security camera tower with small solar panel"
                   fill
                   className="object-cover transition-transform group-hover:scale-105"
@@ -383,7 +383,7 @@ export default function Home() {
             <div className="min-w-[85vw] md:min-w-0 snap-center bg-white/5 rounded-xl overflow-hidden border border-white/10 group">
               <div className="h-64 relative">
                 <Image 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlDZfz_RMpbFLzatfRaRxPjPV_LyXi1ck-k0zvteOkoxXE3vFqL4wnggXLmBxp0m5GPD_KNdKLCUsWaRD9c-WYcc4v_KWKZTMlMdsOV2iJ5O46coHSVbWknad0s1dveZHMp_AaQW5WeJtOKVk-rSmKbmg3mdzz5fC36pcR_FCLIp3mq0UU2rwf1MNVfYybjX96yQt5CialLrTGac2rp9pCI-xKirWRbpush6EagoEJiB_FKlkPQbhssqMy4jqDQbNve2j2rqQWeA_k"
+                  src="/images/img-mantencion-fotovoltaica.webp"
                   alt="Industrial solar inverter station being inspected"
                   fill
                   className="object-cover transition-transform group-hover:scale-105"

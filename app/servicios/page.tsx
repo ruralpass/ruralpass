@@ -8,7 +8,7 @@ export default function Servicios() {
       <section className="relative min-h-[716px] flex items-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs59LWK2L9Y0UbenHHl9TL3PkKHPYdCcjCWX6eQh8sMV5v3RRpYAlyLe4ScMjTV8SqBzilZD55iGvUgBL3d-qbHRWPCem6ZpkSIbm6JKWFvEoiS2MCTeufMU6V8Wc680jhlk6kl0JL_AkSZWRdsdiQhmwWF0g0DfK4lgMsLeoB4yuAO03KDlrKpWnGCvG5s0fXLOl2tGBd3m9ba76oweVwPEzbP0eqSTt2fa4jeTGUljPITsZBU6mGQ39XA-TWSL10Bz_V48urhRM1"
+            src="/images/img-solar-banner-servicios.webp"
             alt="dramatic wide shot of a solar farm nestled in the rugged andean mountains under a clear blue sky with golden light"
             fill
             className="object-cover opacity-40"
@@ -45,7 +45,7 @@ export default function Servicios() {
             <div className="absolute -top-12 -left-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white h-[420px]">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuALZHvzhNZcjLxKVHSeyC5VJYh8rrCKey7rcPXZdYE033lAZH_7T7PtWaaej3l9O_0vgkL6eDLMKmotkuT5U9qFGFhumg2Bd9D2tEx_0XmRempdiIcT1I6eqbMNO6IQ9_MOi9USBtrFnYLKPcv_Mr0CQzs7lrp1QUlQPtI6hRWc-NPuAgbfQR0Qs70Ywji9JbFCbkeiaayK4oLuhUwo6NGrVh_ysNUp33ki0DqWpOA_dKmAt8OwzCZ8DN8ohsd0MkDfttsVWQ_xqLxq"
+                src="/images/img-solar-offgrid.webp"
                 alt="Instalación solar off-grid en vivienda rural"
                 fill
                 className="object-cover"
@@ -119,7 +119,7 @@ export default function Servicios() {
             <div className="absolute -top-12 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white h-[420px]">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2SqU6LEGNv8sg6-deIfIjHElId19amHVkvkkv_j5jUGRG59AbABT2oMRD1NEQgNQpsKcAXH5NxleX5aY-mE_OENdM8LTuveMM9I_637b0vf7suphdOQxHDPuxyLVyORf15piyo6YzkVo15J6QNUw4KG09sZS8lmG0Uli7DhqNURvLqVIV0VzWplLXN6hQ9PRUiYHApJBiksJyMtrEUeP9uZJMPDlmGCaH8iuWlczq67jNUPMtbhPP6RRuMxOZdz7hQjDKk_W9Mo_p"
+                src="/images/img-camara-seguridad.webp"
                 alt="Sistema de seguridad con cámara solar en campo"
                 fill
                 className="object-cover"
@@ -145,7 +145,7 @@ export default function Servicios() {
             <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-tertiary/10 rounded-full blur-3xl"></div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white h-[420px]">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlDZfz_RMpbFLzatfRaRxPjPV_LyXi1ck-k0zvteOkoxXE3vFqL4wnggXLmBxp0m5GPD_KNdKLCUsWaRD9c-WYcc4v_KWKZTMlMdsOV2iJ5O46coHSVbWknad0s1dveZHMp_AaQW5WeJtOKVk-rSmKbmg3mdzz5fC36pcR_FCLIp3mq0UU2rwf1MNVfYybjX96yQt5CialLrTGac2rp9pCI-xKirWRbpush6EagoEJiB_FKlkPQbhssqMy4jqDQbNve2j2rqQWeA_k"
+                src="/images/img-mantencion-fotovoltaica.webp"
                 alt="Sistema de control de acceso industrial"
                 fill
                 className="object-cover"
@@ -219,7 +219,7 @@ export default function Servicios() {
             <div className="absolute -top-12 -right-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white h-[420px]">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ5SuRAlJRpptqNjNeP1_K9kZQrL-GqUzHpmPGMgkJtZPpJyY_Z1GhdLWgvkJBDOCSq-6zgADZ-Nf-NSfO9xFoGydpHp0W8oz8qQfiAwOzPzG_S2bp0wfkYrp0TBXeebrhutlV3ha3SjgEjRULhCrgx_08llKQqlJSVl0Edt3h9Vqxo11a0pXO0UJ4Zb6Q629veoi-YPiI2dkYm9EbsuE5YYcKBhzzuCccBKUMZSIg-0KVPfo0quQ7QIWb6z6EgIQ8Ullzr_jSHsFO"
+                src="/images/img-telecomunicaciones-rural.webp"
                 alt="Infraestructura de telecomunicaciones en zona rural"
                 fill
                 className="object-cover"
