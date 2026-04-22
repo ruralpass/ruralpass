@@ -42,9 +42,8 @@ export default function Navbar() {
 
   useEffect(() => {
     sanityClient.fetch<NavbarData>(QUERY).then((res) => {
-      console.log('[Sanity Navbar]', res);
       if (res) setData({ ...FALLBACK, ...res });
-    }).catch((err) => { console.error('[Sanity Navbar error]', err); });
+    }).catch(() => {});
   }, []);
 
   const navLinks = data.navLinks ?? FALLBACK.navLinks!;
@@ -60,12 +59,12 @@ export default function Navbar() {
           <Image
             src={logoUrl ?? "/logo-navbar-final.webp"}
             alt={logoAlt}
-            width={600}
-            height={200}
+            width={288}
+            height={96}
             className="w-auto h-20 lg:h-24 transition-transform duration-300 group-hover:scale-105"
             priority
-            quality={100}
-            sizes="(max-width: 1024px) 160px, 192px"
+            quality={82}
+            sizes="(max-width: 1024px) 240px, 288px"
             onError={(e) => {
               e.currentTarget.src = "/images/logo-navbar-large-fallback.jpg";
             }}
