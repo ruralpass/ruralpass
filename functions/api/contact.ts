@@ -30,6 +30,51 @@ function getColor(tipoSistema: string): string {
   return '#64748b';
 }
 
+function buildEmailText(
+  nombre: string,
+  telefono: string,
+  email: string,
+  ubicacion: string,
+  tipoSistema: string,
+  descripcion: string
+): string {
+  const icon = getIcon(tipoSistema);
+  const now = new Date().toLocaleString('es-CL', {
+    timeZone: 'America/Santiago',
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+
+  return `NUEVA COTIZACIÓN — RURALPASS
+${'='.repeat(50)}
+
+${icon} Tipo de sistema: ${tipoSistema}
+Fecha: ${now}
+
+DATOS DEL CLIENTE
+${'-'.repeat(50)}
+Nombre:    ${nombre}
+Teléfono:  ${telefono}
+Correo:    ${email || 'No proporcionado'}
+Ubicación: ${ubicacion || 'No especificada'}
+
+DESCRIPCIÓN DEL PROBLEMA
+${'-'.repeat(50)}
+${descripcion}
+
+CONTACTO RÁPIDO
+${'-'.repeat(50)}
+WhatsApp RuralPass: +56 9 5627 7070
+Cliente: ${telefono}
+
+${'='.repeat(50)}
+Generado automáticamente desde ruralpass.cl
+RuralPass SpA · Colo Colo 379 Of. 706, Concepción, Chile`;
+}
+
 function buildEmailHtml(
   nombre: string,
   telefono: string,
@@ -162,6 +207,7 @@ export async function onRequestPost(context: any) {
         to: 'ruralpass.spa@gmail.com',
         subject: `${getIcon(tipoSistema ?? '')} Nueva Cotización — ${nombre} (${tipoSistema})`,
         html: buildEmailHtml(nombre, telefono, email ?? '', ubicacion ?? '', tipoSistema ?? 'Otro', descripcion),
+        text: buildEmailText(nombre, telefono, email ?? '', ubicacion ?? '', tipoSistema ?? 'Otro', descripcion),
       }),
     });
 
