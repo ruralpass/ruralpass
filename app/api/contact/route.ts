@@ -102,13 +102,11 @@ function buildEmailHtml(nombre: string, telefono: string, email: string, ubicaci
                 </tr>
                 <tr style="background:#fafafa;">
                   <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#94a3b8;">Teléfono</td>
-                  <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:15px;color:#0f172a;">
-                    <a href="tel:${telefono}" style="color:#1a4a8a;font-weight:700;text-decoration:none;">${telefono}</a>
-                  </td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:15px;font-weight:700;color:#0f172a;">${telefono}</td>
                 </tr>
                 <tr>
                   <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#94a3b8;">Correo</td>
-                  <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:15px;color:#0f172a;">${email ? `<a href="mailto:${email}" style="color:#1a4a8a;font-weight:700;text-decoration:none;">${email}</a>` : '<span style="color:#cbd5e1;">No proporcionado</span>'}</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:15px;color:#0f172a;">${email || '<span style="color:#cbd5e1;">No proporcionado</span>'}</td>
                 </tr>
                 <tr style="background:#fafafa;">
                   <td style="padding:14px 20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#94a3b8;">Ubicación</td>
@@ -132,16 +130,10 @@ function buildEmailHtml(nombre: string, telefono: string, email: string, ubicaci
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="padding-right:8px;" width="50%">
-                    <a href="https://wa.me/56956277070?text=Hola%20${encodeURIComponent(nombre)}%2C%20recibimos%20tu%20cotizacion."
-                      style="display:block;background:#25d366;color:#fff;font-size:14px;font-weight:700;text-align:center;text-decoration:none;padding:14px 20px;border-radius:10px;">
-                      💬 Responder por WhatsApp
-                    </a>
+                    <div style="background:#25d366;color:#fff;font-size:14px;font-weight:700;text-align:center;padding:14px 20px;border-radius:10px;">💬 WhatsApp: +56 9 5627 7070</div>
                   </td>
                   <td style="padding-left:8px;" width="50%">
-                    <a href="tel:${telefono}"
-                      style="display:block;background:#0f2d5e;color:#fff;font-size:14px;font-weight:700;text-align:center;text-decoration:none;padding:14px 20px;border-radius:10px;">
-                      📞 Llamar al cliente
-                    </a>
+                    <div style="background:#0f2d5e;color:#fff;font-size:14px;font-weight:700;text-align:center;padding:14px 20px;border-radius:10px;">📞 Llamar: ${telefono}</div>
                   </td>
                 </tr>
               </table>
