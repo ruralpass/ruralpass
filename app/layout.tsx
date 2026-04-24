@@ -4,6 +4,7 @@ import './globals.css'; // Global styles
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppBubble from '@/components/WhatsAppBubble';
+import ClarityAnalytics from '@/components/ClarityAnalytics';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,6 +36,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         </main>
         <Footer />
         <WhatsAppBubble />
+        <ClarityAnalytics />
       </body>
     </html>
   );
