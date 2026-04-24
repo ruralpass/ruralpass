@@ -65,11 +65,6 @@ DESCRIPCIÓN DEL PROBLEMA
 ${'-'.repeat(50)}
 ${descripcion}
 
-CONTACTO RÁPIDO
-${'-'.repeat(50)}
-WhatsApp RuralPass: +56 9 5627 7070
-Cliente: ${telefono}
-
 ${'='.repeat(50)}
 Generado automáticamente desde ruralpass.cl
 RuralPass SpA · Colo Colo 379 Of. 706, Concepción, Chile`;
@@ -147,16 +142,6 @@ function buildEmailHtml(
             <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:32px;">
               <tr><td style="background:#f8fafc;padding:12px 20px;border-bottom:1px solid #e2e8f0;"><span style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#64748b;">Descripción del problema</span></td></tr>
               <tr><td style="padding:20px;font-size:15px;color:#1e293b;line-height:1.7;">${descripcion}</td></tr>
-            </table>
-            <table width="100%" cellpadding="0" cellspacing="0">
-              <tr>
-                <td style="padding-right:8px;" width="50%">
-                  <div style="display:block;background:#25d366;color:#fff;font-size:14px;font-weight:700;text-align:center;padding:14px 20px;border-radius:10px;">💬 WhatsApp: +56 9 5627 7070</div>
-                </td>
-                <td style="padding-left:8px;" width="50%">
-                  <div style="display:block;background:#0f2d5e;color:#fff;font-size:14px;font-weight:700;text-align:center;padding:14px 20px;border-radius:10px;">📞 Llamar: ${telefono}</div>
-                </td>
-              </tr>
             </table>
           </td>
         </tr>
