@@ -55,13 +55,13 @@ function buildEmailHtml(nombre: string, telefono: string, ubicacion: string, tip
                   </td>
                   <td align="right">
                     <span style="display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;">
-                      Soporte Técnico
+                      Nueva Cotización
                     </span>
                   </td>
                 </tr>
               </table>
               <p style="color:#93c5fd;font-size:13px;margin:20px 0 0;letter-spacing:0.03em;">
-                Nuevo requerimiento recibido desde <strong style="color:#bfdbfe;">ruralpass.cl</strong>
+                Nueva cotización recibida desde <strong style="color:#bfdbfe;">ruralpass.cl</strong>
               </p>
             </td>
           </tr>
@@ -85,7 +85,7 @@ function buildEmailHtml(nombre: string, telefono: string, ubicacion: string, tip
 
               <!-- TITLE -->
               <h1 style="margin:0 0 6px;font-size:22px;font-weight:800;color:#0f2d5e;line-height:1.3;">
-                Nuevo Requerimiento de Soporte
+                Nueva Cotización
               </h1>
               <p style="margin:0 0 28px;font-size:13px;color:#64748b;">${now}</p>
 
@@ -128,7 +128,7 @@ function buildEmailHtml(nombre: string, telefono: string, ubicacion: string, tip
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="padding-right:8px;" width="50%">
-                    <a href="https://wa.me/56956277070?text=Hola%20${encodeURIComponent(nombre)}%2C%20recibimos%20tu%20requerimiento%20de%20soporte."
+                    <a href="https://wa.me/56956277070?text=Hola%20${encodeURIComponent(nombre)}%2C%20recibimos%20tu%20cotizacion."
                       style="display:block;background:#25d366;color:#fff;font-size:14px;font-weight:700;text-align:center;text-decoration:none;padding:14px 20px;border-radius:10px;">
                       💬 Responder por WhatsApp
                     </a>
@@ -176,7 +176,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'RuralPass <contacto@ruralpass.cl>',
       to: 'ruralpass.spa@gmail.com',
-      subject: `${SYSTEM_ICONS[tipoSistema] ?? '🔧'} Nuevo requerimiento — ${nombre} (${tipoSistema})`,
+      subject: `${SYSTEM_ICONS[tipoSistema] ?? '🔧'} Nueva Cotización — ${nombre} (${tipoSistema})`,
       html: buildEmailHtml(nombre, telefono, ubicacion ?? '', tipoSistema ?? 'Otro', descripcion),
     });
 
