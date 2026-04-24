@@ -510,6 +510,7 @@ function ContactCTAForm() {
   const [form, setForm] = useState({
     nombre: '',
     telefono: '',
+    email: '',
     tipoSistema: 'Solar Off-Grid Residencial',
     marcaInversor: '',
     ubicacion: '',
@@ -531,6 +532,7 @@ function ContactCTAForm() {
         body: JSON.stringify({
           nombre: form.nombre,
           telefono: form.telefono,
+          email: form.email,
           ubicacion: form.ubicacion,
           tipoSistema: form.tipoSistema + (form.marcaInversor ? ` — Inversor: ${form.marcaInversor}` : ''),
           descripcion: form.descripcion,
@@ -543,7 +545,7 @@ function ContactCTAForm() {
         return;
       }
       setStatus('success');
-      setForm({ nombre: '', telefono: '', tipoSistema: 'Solar Off-Grid Residencial', marcaInversor: '', ubicacion: '', descripcion: '' });
+      setForm({ nombre: '', telefono: '', email: '', tipoSistema: 'Solar Off-Grid Residencial', marcaInversor: '', ubicacion: '', descripcion: '' });
     } catch {
       setStatus('network_error');
     }
@@ -638,6 +640,10 @@ function ContactCTAForm() {
                     <option>Cámaras de Seguridad Solar</option>
                     <option>Otro / Mantención General</option>
                   </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-primary uppercase tracking-widest mb-2">Correo Electrónico</label>
+                  <input name="email" value={form.email} onChange={handleChange} className={inputClass} type="email" placeholder="Ej: juan@correo.cl" />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>

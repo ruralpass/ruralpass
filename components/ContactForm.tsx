@@ -10,6 +10,7 @@ export default function ContactForm() {
   const [form, setForm] = useState({
     nombre: '',
     telefono: '',
+    email: '',
     ubicacion: '',
     tipoSistema: 'Solar',
     descripcion: '',
@@ -36,7 +37,7 @@ export default function ContactForm() {
         return;
       }
       setStatus('success');
-      setForm({ nombre: '', telefono: '', ubicacion: '', tipoSistema: 'Solar', descripcion: '' });
+      setForm({ nombre: '', telefono: '', email: '', ubicacion: '', tipoSistema: 'Solar', descripcion: '' });
     } catch {
       setStatus('network_error');
     }
@@ -111,6 +112,18 @@ export default function ContactForm() {
           className={inputClass}
           placeholder="+56 9 1234 5678"
           type="tel"
+        />
+      </div>
+      <div className="flex flex-col gap-2">
+        <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-primary/60">Correo Electrónico</label>
+        <input
+          id="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          className={inputClass}
+          placeholder="Ej: juan@correo.cl"
+          type="email"
         />
       </div>
       <div className="flex flex-col gap-2">

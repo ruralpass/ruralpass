@@ -19,7 +19,7 @@ const SYSTEM_COLORS: Record<string, string> = {
   Otro: '#64748b',
 };
 
-function buildEmailHtml(nombre: string, telefono: string, ubicacion: string, tipoSistema: string, descripcion: string): string {
+function buildEmailHtml(nombre: string, telefono: string, email: string, ubicacion: string, tipoSistema: string, descripcion: string): string {
   const icon = SYSTEM_ICONS[tipoSistema] ?? '🔧';
   const badgeColor = SYSTEM_COLORS[tipoSistema] ?? '#64748b';
   const now = new Date().toLocaleString('es-CL', {
@@ -107,6 +107,10 @@ function buildEmailHtml(nombre: string, telefono: string, ubicacion: string, tip
                   </td>
                 </tr>
                 <tr>
+                  <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#94a3b8;">Correo</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #f1f5f9;font-size:15px;color:#0f172a;">${email ? `<a href="mailto:${email}" style="color:#1a4a8a;font-weight:700;text-decoration:none;">${email}</a>` : '<span style="color:#cbd5e1;">No proporcionado</span>'}</td>
+                </tr>
+                <tr style="background:#fafafa;">
                   <td style="padding:14px 20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#94a3b8;">Ubicación</td>
                   <td style="padding:14px 20px;font-size:15px;color:#0f172a;">${ubicacion || '<span style="color:#cbd5e1;">No especificada</span>'}</td>
                 </tr>
@@ -167,7 +171,7 @@ function buildEmailHtml(nombre: string, telefono: string, ubicacion: string, tip
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
-    const { nombre, telefono, ubicacion, tipoSistema, descripcion } = await req.json();
+    const { nombre, telefono, email, ubicacion, tipoSistema, descripcion } = await req.json();
 
     if (!nombre || !telefono || !descripcion) {
       return NextResponse.json({ error: 'Faltan campos obligatorios.' }, { status: 400 });
@@ -177,7 +181,7 @@ export async function POST(req: NextRequest) {
       from: 'RuralPass <contacto@ruralpass.cl>',
       to: 'ruralpass.spa@gmail.com',
       subject: `${SYSTEM_ICONS[tipoSistema] ?? '🔧'} Nueva Cotización — ${nombre} (${tipoSistema})`,
-      html: buildEmailHtml(nombre, telefono, ubicacion ?? '', tipoSistema ?? 'Otro', descripcion),
+      html: buildEmailHtml(nombre, telefono, email ?? '', ubicacion ?? '', tipoSistema ?? 'Otro', descripcion),
     });
 
     return NextResponse.json({ ok: true });
